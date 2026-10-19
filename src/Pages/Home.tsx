@@ -1,5 +1,5 @@
 import { Box, Typography, Button,  } from '@mui/material';
-import raj from "../Images/raj.png"
+import Raj from "../Images/Raj.png"
 import { useNavigate } from 'react-router-dom';
 
 function Home(){
@@ -27,7 +27,7 @@ function Home(){
        
         <Box className="right-box">
          <img
-          src={raj}
+          src={Raj}
           alt="mr"
             className="avatar"></img>
            <Typography  variant="h6"className='profile-name'>
