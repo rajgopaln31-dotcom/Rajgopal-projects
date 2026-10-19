@@ -1,23 +1,18 @@
-import {  Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+
 import Home from "../Pages/Home";
-import Projects from "../Pages/Projects";
-import Contacts from "../Pages/Contacts";
+import Project from "../Pages/Projects";
+import Contact from "../Pages/Contacts";
 
-
-function AppRoutes() {
-  
+export default function AppRoutes() {
   return (
-  <>
-      <Routes>
-       
-        <Route path="/home" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contacts" element={<Contacts/>} />
-      
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
+      <Route path="/projects" element={<Project />} />
+      <Route path="/contact" element={<Contact />} />
 
-      </Routes>
-   </>
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
   );
 }
-
-export default AppRoutes;

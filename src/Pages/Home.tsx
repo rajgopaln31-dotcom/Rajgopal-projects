@@ -1,75 +1,93 @@
-import { Box, Typography, Button,  } from '@mui/material';
-import Raj from "../Images/Raj.png"
-import { useNavigate } from 'react-router-dom';
+import {
+  Box,
+  Typography,
+  Button,
+  Chip,
+} from "@mui/material";
 
-function Home(){
-  const navigate=useNavigate();
-  const skills = ['HTML', 'CSS', 'Java', 'React', 'Git'];
+import { useNavigate } from "react-router-dom";
+
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "React",
+  "Git",
+  "REST APIs",
+];
+
+export default function Home() {
+  const navigate = useNavigate();
 
   return (
-    <Box className="container">
-       <Typography className="brand-name">
-                  MUTTIREDDY RAJGOPAL
-                </Typography>
-      <Box className="hero-section">
-       
-        <Box className="left-box">
-          <Typography variant="h4" className="text">
-            Hi, I'm RAJGOPAL.
-            <br/> Frontend Developer
-          </Typography>
-          <Typography variant="h6" className="description">
-            I build clean, fast apps with React. Currently Iam learning.
-            and shipping every week
-          </Typography>
-        </Box>
+    <Box className="page-panel home-page">
+     
+      <Box className="home-content">
+      
+        <Box className="hero-section">
+          <Box className="hero-text">
+            <Typography className="hero-title">
+              Hi, I'm RAJGOPAL.
+              <br />
+              Frontend Developer.
+            </Typography>
 
-       
-        <Box className="right-box">
-         <img
-          src={Raj}
-          alt="mr"
-            className="avatar"></img>
-           <Typography  variant="h6"className='profile-name'>
-            MUTTIREDDY.RAJGOPAL
-           </Typography>
-        </Box>
-      </Box>
+            <Typography className="hero-description">
+              I build clean, fast web apps with React.
+              Currently learning and shipping every week.
+            </Typography>
 
-      <Box className="button-section">
-        <Button variant="contained"
-        onClick={()=>navigate("/projects")} 
-        className="contained-button">
-          See my projects
-        </Button>
-        <Button variant="outlined" className="outlined-button">
-          Get in touch
-        </Button>
-      </Box>
+            <Box className="hero-actions">
+              <Button 
+                variant="contained"
+                className="primary-button"
+                onClick={() =>navigate("/projects")}
+                 
+              >
+                See my projects
+              </Button>
 
-      <Box className="skills">
-        <Typography variant="h6" className="description">
-          Skills
-        </Typography>
-        <Box className="skills-container">
-          {skills.map((skill, index) => (
-            <Box key={index} className="skill-box">
-              {skill}
+              <Button
+                variant="text"
+                className="text-button"
+                onClick={() =>
+                  document
+                    .getElementById("contact")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+              >
+                Get in touch
+              </Button>
             </Box>
-            
-          ))}
-          <br/>
+          </Box>
 
+          <Box className="profile-circle">
+            <Typography className="profile-initials">
+              MRG
+            </Typography>
+          </Box>
         </Box>
-      </Box>
- {/* Footer Element */}
-      <Box component="footer" className="footer-wrapper">
-        <Typography variant="caption">
-          © 2026 MUTTIREDDY RAJGOPAL
+
+        <Box className="skills-section">
+          <Typography className="skills-title">
+            Skills
+          </Typography>
+
+          <Box className="skills-list">
+            {skills.map((skill) => (
+              <Chip
+                key={skill}
+                label={skill}
+                className="skill-chip"
+              />
+            ))}
+          </Box>
+        </Box>
+
+        <Typography className="page-footer">
+          © 2026 MUTTIREDDY.RAJGOPAL
         </Typography>
       </Box>
     </Box>
   );
-};
-
-export default Home;
+}

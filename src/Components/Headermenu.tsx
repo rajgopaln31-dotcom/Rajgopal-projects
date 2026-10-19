@@ -1,42 +1,26 @@
-import { Box, Typography,  } from "@mui/material";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Box, Typography } from "@mui/material";
+import { NavLink } from "react-router-dom";
 
-
-function Headermenu() {
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  const Gopal = [
-    { id: 1, name: "Home", path: "/home" },
-   
-    { id: 5, name: "Projects", path: "/projects" },
-    { id: 6, name: "Contacts", path: "/contacts" },
-  ];
-
+export default function Header() {
   return (
-    <Box className="header-menu"
-    >
+    <Box component="header" className="site-header">
+      <Typography className="brand-name">
+       MUTTIREDDY.RAJGOPAL
+      </Typography>
 
-     
+      <Box component="nav" className="header-nav">
+        <NavLink to="/" end className="nav-link">
+          Home
+        </NavLink>
 
-      <Box className="header-nav">
-        {Gopal.map((item) => (
-          <Typography
-            key={item.id}
-            className={`nav-link ${
-              location.pathname === item.path ? "active" : ""
-            }`}
-            onClick={() => navigate(item.path)}
-          >
-            {item.name}
-          </Typography>
-        ))}
+        <NavLink to="/projects" className="nav-link">
+          Projects
+        </NavLink>
 
-       
-       
+        <NavLink to="/contact" className="nav-link">
+          Contact
+        </NavLink>
       </Box>
     </Box>
   );
 }
-
-export default Headermenu;

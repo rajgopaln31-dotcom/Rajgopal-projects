@@ -1,142 +1,137 @@
-import React, { useState } from 'react';
-import { 
-  
-  Typography, 
-  Box, 
-  TextField, 
-  Grid, 
-  Card, 
-  CardContent, 
-  Link 
-} from '@mui/material';
+import { useState } from "react";
+import {
+  Box,
+  Typography,
+  Card,
+  CardContent,
+  TextField,
+  Button,
+} from "@mui/material";
 
 
-interface ProjectItem {
-  title: string;
-  description: string;
-  tags: string;
-  stars: number;
-  link: string;
-}
-
-const initialProjects: ProjectItem[] = [
+const projects = [
   {
     title: "Portfolio Website",
     description: "Personal site built with React and CSS.",
-    tags: "JavaScript",
+    technology: "JavaScript",
     stars: 12,
-    link: "#"
+    link: "#",
   },
   {
     title: "Todo App",
     description: "Add, complete and delete tasks.",
-    tags: "JavaScript",
+    technology: "JavaScript",
     stars: 8,
-    link: "#"
+    link: "#",
   },
   {
     title: "Weather Dashboard",
     description: "Search a city and see the forecast.",
-    tags: "React",
+    technology: "React",
     stars: 21,
-    link: "#"
+    link: "#",
   },
   {
     title: "Quiz Game",
     description: "Multiple choice quiz with a score.",
-    tags: "JavaScript",
+    technology: "JavaScript",
     stars: 5,
-    link: "#"
+    link: "#",
   },
   {
     title: "Recipe Finder",
     description: "Find recipes by ingredient using an API.",
-    tags: "React",
+    technology: "React",
     stars: 14,
-    link: "#"
+    link: "#",
   },
   {
     title: "Expense Tracker",
     description: "Track spending with a simple chart.",
-    tags: "JavaScript",
+    technology: "JavaScript",
     stars: 9,
-    link: "#"
-  }
+    link: "#",
+  },
 ];
 
-export default function ProjectsDashboard(): React.JSX.Element {
-  const [searchQuery, setSearchQuery] = useState<string>('');
+export default function Project() {
+  const [search, setSearch] = useState("");
 
-  const filteredProjects = initialProjects.filter((project) =>
-    project.title.toLowerCase().includes(searchQuery.toLowerCase())
+  const filteredProjects = projects.filter((project) =>
+    `${project.title} ${project.description} ${project.technology}`
+      .toLowerCase()
+      .includes(search.toLowerCase())
   );
 
   return (
-    <Box className="page-container">
+    <Box className="page-panel projects-page" id="projects">
      
-          <Typography className="brand-name">
-            MUTTIREDDY RAJGOPAL
-          </Typography>
-          
-      
+      <Box className="projects-content">
+        <Typography className="section-title">
+          Projects
+        </Typography>
 
-      {/* Main Container */}
-      <Box component="main" className="main-wrapper">
-        <Box sx={{ mb: 4 }}>
-          <Typography variant="h4" component="h1" className="page-title">
-            Projects
-          </Typography>
-          <Typography variant="body1" className="page-subtitle">
-            Things I built while learning.
-          </Typography>
-        </Box>
+        <Typography className="section-description">
+          Things I built while learning.
+        </Typography>
 
-        {/* Filter Input */}
-        <Box className="search-field-wrapper">
-          <TextField
-            fullWidth
-            size="small"
-            variant="outlined"
-            placeholder="Search projects"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="search-input-field"
-          />
-        </Box>
+        <TextField
+          className="project-search"
+          placeholder="Search projects"
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+          variant="outlined"
+          size="small"
+          fullWidth
+        />
 
-        {/* Display Grid */}
-        <Grid container spacing={3}>
-          {filteredProjects.map((project, idx) => (
-            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={idx}>
-              <Card className="project-card-mui" variant="outlined">
-                <CardContent sx={{ p: 0 }}>
-                  <Typography variant="h6" component="h3" className="card-title-text">
-                    {project.title}
+        <Box className="projects-grid">
+          {filteredProjects.map((project) => (
+            <Card
+              className="project-card"
+              elevation={0}
+              key={project.title}
+            >
+              <CardContent className="project-card-content">
+                <Typography className="project-title">
+                  {project.title}
+                </Typography>
+
+                <Typography className="project-description">
+                  {project.description}
+                </Typography>
+
+                <Box className="project-meta">
+                  <Typography className="project-technology">
+                    {project.technology}
                   </Typography>
-                  <Typography variant="body2" className="card-desc-text">
-                    {project.description}
+
+                  <Typography className="project-stars">
+                    ★ {project.stars}
                   </Typography>
-                </CardContent>
-                
-                <Box className="card-bottom-actions">
-                  <Box className="meta-info-group">
-                    <span className="tag-label">{project.tags}</span>
-                    <span className="star-count-group">★ {project.stars}</span>
-                  </Box>
-                  <Link href={project.link} className="action-code-link">
+
+                  <Button
+                    className="project-link"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     View code
-                  </Link>
+                  </Button>
                 </Box>
-              </Card>
-            </Grid>
+              </CardContent>
+            </Card>
           ))}
-        </Grid>
-      </Box>
+        </Box>
 
-      {/* Footer Element */}
-      <Box component="footer" className="footer-wrapper">
-        <Typography variant="caption">
-          © 2026 MUTTIREDDY RAJGOPAL
+        {filteredProjects.length === 0 && (
+          <Typography className="empty-projects">
+            No projects found.
+          </Typography>
+        )}
+
+        <Typography className="page-footer">
+          © 2026 MUTTIREDDY.RAJGOPAL
         </Typography>
       </Box>
     </Box>
