@@ -4,7 +4,10 @@ import { NavLink } from "react-router-dom";
 export default function Header() {
   return (
     <Box component="header" className="site-header">
-      <Typography className="brand-name">
+      <Typography sx={{
+         fontfamily: "Inter, sans-serif",
+         fontStyle:"10px"
+      }}className="brand-name">
        MUTTIREDDY.RAJGOPAL
       </Typography>
 

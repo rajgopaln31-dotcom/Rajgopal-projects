@@ -11,6 +11,7 @@ import {
   TextField,
   Button,
 } from "@mui/material";
+import Headermenu from "../Components/Headermenu";
 
 
 export default function Contact() {
@@ -26,8 +27,12 @@ export default function Contact() {
   };
 
   return (
+    <>
+     <Typography sx={{
+      transform:"translatex(40px)"
+    }}>Contact</Typography>
     <Box className="page-panel contact-page" id="contact">
-     
+     <Headermenu/>
       <Box className="contact-content">
         <Typography className="section-title">
           Contact
@@ -97,7 +102,11 @@ export default function Contact() {
                 >
                   Send message
                 </Button>
+                <Typography className="page-footer">
+          © 2026 MUTTIREDDY.RAJGOPAL
+        </Typography>
               </Box>
+              
             </CardContent>
           </Card>
 
@@ -147,5 +156,6 @@ export default function Contact() {
         </Box>
         </Box>
         </Box>
+        </>
   );
 }

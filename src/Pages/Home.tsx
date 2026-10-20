@@ -6,6 +6,8 @@ import {
 } from "@mui/material";
 
 import { useNavigate } from "react-router-dom";
+import Headermenu from "../Components/Headermenu";
+
 
 const skills = [
   "HTML",
@@ -20,8 +22,13 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
+    <>
+    <Typography sx={{
+       fontfamily: "Inter, sans-serif",
+      transform:"translatex(40px)"
+    }}>Home</Typography>
     <Box className="page-panel home-page">
-     
+     <Headermenu/>
       <Box className="home-content">
       
         <Box className="hero-section">
@@ -89,5 +96,6 @@ export default function Home() {
         </Typography>
       </Box>
     </Box>
+    </>
   );
 }

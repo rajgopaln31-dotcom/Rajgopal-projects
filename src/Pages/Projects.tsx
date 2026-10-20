@@ -7,6 +7,7 @@ import {
   TextField,
   Button,
 } from "@mui/material";
+import Headermenu from "../Components/Headermenu";
 
 
 const projects = [
@@ -64,8 +65,12 @@ export default function Project() {
   );
 
   return (
+    <>
+     <Typography sx={{
+      transform:"translatex(40px)"
+    }}>Projects</Typography>
     <Box className="page-panel projects-page" id="projects">
-     
+     <Headermenu/>
       <Box className="projects-content">
         <Typography className="section-title">
           Projects
@@ -135,5 +140,6 @@ export default function Project() {
         </Typography>
       </Box>
     </Box>
+    </>
   );
 }
