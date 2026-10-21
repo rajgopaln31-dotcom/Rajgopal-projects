@@ -107,7 +107,7 @@ export default function Contact() {
                       ? "Enter 3-50 letters and spaces only."
                       : "Name must contain 3-50 letters."
                   }
-                  inputProps={{ maxLength: 50 }}
+                  slotProps={{ htmlInput: { maxLength: 50 } }}
                   fullWidth
                   size="small"
                   required
@@ -163,7 +163,7 @@ export default function Contact() {
                       ? "Message must contain 10-500 characters."
                       : `${messageValue.trim().length}/500 characters. Minimum 10.`
                   }
-                  inputProps={{ maxLength: 500 }}
+                  slotProps={{ htmlInput: { maxLength: 500 } }}
                   fullWidth
                   multiline
                   rows={4}
