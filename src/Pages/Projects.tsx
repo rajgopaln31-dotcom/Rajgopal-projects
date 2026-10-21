@@ -66,9 +66,7 @@ export default function Project() {
 
   return (
     <>
-     <Typography sx={{
-      transform:"translatex(40px)"
-    }}>Projects</Typography>
+   
     <Box className="page-panel projects-page" id="projects">
      <Headermenu/>
       <Box className="projects-content">

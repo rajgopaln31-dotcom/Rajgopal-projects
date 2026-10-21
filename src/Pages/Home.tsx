@@ -23,11 +23,8 @@ export default function Home() {
 
   return (
     <>
-    <Typography sx={{
-       fontfamily: "Inter, sans-serif",
-      transform:"translatex(40px)"
-    }}>Home</Typography>
-    <Box className="page-panel home-page">
+  
+    <Box  className="page-panel home-page">
      <Headermenu/>
       <Box className="home-content">
       
@@ -40,8 +37,8 @@ export default function Home() {
             </Typography>
 
             <Typography className="hero-description">
-              I build clean, fast web apps with React.
-              Currently learning and shipping every week.
+              I build clean, fast web apps with React.Currently learning and<br/>
+               shipping every week.
             </Typography>
 
             <Box className="hero-actions">
@@ -54,14 +51,10 @@ export default function Home() {
                 See my projects
               </Button>
 
-              <Button
+              <Button onClick={()=>navigate("/contact")}
                 variant="text"
                 className="text-button"
-                onClick={() =>
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+               
               >
                 Get in touch
               </Button>

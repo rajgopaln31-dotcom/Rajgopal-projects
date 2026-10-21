@@ -5,10 +5,12 @@ export default function Header() {
   return (
     <Box component="header" className="site-header">
       <Typography sx={{
-         fontfamily: "Inter, sans-serif",
-         fontStyle:"10px"
+         fontfamily: "Roboto, Arial,sans-serif",
+         lineHeight:"1.2",
+         fontWeight:"700",
+         fontStyle:"30px"
       }}className="brand-name">
-       MUTTIREDDY.RAJGOPAL
+       M.R.G
       </Typography>
 
       <Box component="nav" className="header-nav">

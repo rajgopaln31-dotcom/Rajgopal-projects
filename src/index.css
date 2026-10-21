@@ -434,30 +434,83 @@ border-radius: 6px;
   margin-top: 1px;
 }
 
-.social-title.MuiTypography-root {
-  margin-bottom: 8px;
-  color: #293241;
-  font-size: 12px;
-  font-weight: 600;
+/* Social Card */
+.social-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.social-detail.MuiTypography-root {
-  margin-bottom: 8px;
-  color: #78808d;
-  font-size: 10px;
-  line-height: 1.5;
-  overflow-wrap: anywhere;
+.social-title {
+  margin-bottom: 25px !important;
+  color: #1e293b;
+  font-size: 20px !important;
+  font-weight: 700 !important;
 }
 
-.social-detail a {
-  color: #78808d;
-  text-decoration: none;
+.social-icons-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 20px 0;
 }
 
-.social-detail a:hover {
-  color: #3e5edb;
+.social-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50% !important;
+  background: #f1f5f9 !important;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
+.social-icon:hover {
+  transform: translateY(-4px);
+}
+
+.email-icon {
+  color: #2563eb !important;
+}
+
+.email-icon:hover {
+  background: #dbeafe !important;
+}
+
+.whatsapp-icon {
+  color: #059669 !important;
+}
+
+.whatsapp-icon:hover {
+  background: #d1fae5 !important;
+}
+
+.naukri-icon {
+  color: #f97316 !important;
+}
+
+.naukri-icon:hover {
+  background: #ffedd5 !important;
+}
+
+.github-icon {
+  color: #24292f !important;
+}
+
+.github-icon:hover {
+  background: #e2e8f0 !important;
+}
+
+.social-icon svg {
+  font-size: 27px;
+}
+
+.social-detail {
+  margin-top: 15px !important;
+  color: #64748b;
+  font-size: 14px !important;
+}
 /* Responsive layout */
 
 @media (max-width: 700px) {
