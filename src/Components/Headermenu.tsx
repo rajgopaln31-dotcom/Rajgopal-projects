@@ -14,7 +14,7 @@ export default function Header() {
       </Typography>
 
       <Box component="nav" className="header-nav">
-        <NavLink to="/" end className="nav-link">
+        <NavLink to="/home" end className="nav-link">
           Home
         </NavLink>
 

@@ -177,15 +177,24 @@ export default function Contact() {
                   required
                 />
 
-                <Button
-                  type="submit"
-                  variant="contained"
-                  className="primary-button send-button"
-                  fullWidth
-                  disabled={!isFormValid}
-                >
-                  Send message
-                </Button>
+             <Button
+  type="submit"
+  variant="contained"
+  className="primary-button send-button"
+  fullWidth
+  disabled={!isFormValid}
+  sx={{
+    opacity: isFormValid ? 1 : 0.5,
+    cursor: isFormValid ? "pointer" : "not-allowed",
+    "&.Mui-disabled": {
+      backgroundColor: "#9e9e9e",
+      color: "#ffffff",
+      opacity: 0.5,
+    },
+  }}
+>
+  Send message
+</Button>
               </Box>
             </CardContent>
           </Card>
