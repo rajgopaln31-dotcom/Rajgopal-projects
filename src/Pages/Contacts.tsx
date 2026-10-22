@@ -9,6 +9,8 @@ import {
   Button,
   IconButton,
   Tooltip,
+  Snackbar,
+  Alert,
 } from "@mui/material";
 
 import EmailIcon from "@mui/icons-material/Email";
@@ -22,6 +24,8 @@ export default function Contact() {
   const [nameValue, setNameValue] = useState("");
   const [emailValue, setEmailValue] = useState("");
   const [messageValue, setMessageValue] = useState("");
+
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
 
   const [touched, setTouched] = useState({
     name: false,
@@ -55,12 +59,17 @@ export default function Contact() {
     const email = formData.get("email");
     const message = formData.get("message");
 
-    console.log("Contact Form Details:");
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
-
     console.log({ name, email, message });
+
+    setSnackbarOpen(true);
+  };
+
+  const handleSnackbarClose = (
+    _event?: React.SyntheticEvent | Event | null,
+    reason?: string
+  ) => {
+    if (reason === "clickaway") return;
+    setSnackbarOpen(false);
   };
 
   return (
@@ -104,10 +113,9 @@ export default function Contact() {
                   error={touched.name && !isNameValid}
                   helperText={
                     touched.name && !isNameValid
-                      ? "Enter 3-50 letters and spaces only."
-                      : "Name must contain 3-50 letters."
+                      ? "Enter a valid name."
+                      : ""
                   }
-                  slotProps={{ htmlInput: { maxLength: 50 } }}
                   fullWidth
                   size="small"
                   required
@@ -134,8 +142,8 @@ export default function Contact() {
                   helperText={
                     touched.email && !isEmailValid
                       ? "Please enter a valid email address."
-                      
-                      : ""}
+                      : ""
+                  }
                   fullWidth
                   size="small"
                   required
@@ -161,9 +169,8 @@ export default function Contact() {
                   helperText={
                     touched.message && !isMessageValid
                       ? "Message must contain 10-500 characters."
-                      : `${messageValue.trim().length}/500 characters. Minimum 10.`
+                      : ""
                   }
-                  slotProps={{ htmlInput: { maxLength: 500 } }}
                   fullWidth
                   multiline
                   rows={4}
@@ -205,7 +212,7 @@ export default function Contact() {
                 <Tooltip title="WhatsApp">
                   <IconButton
                     component="a"
-                    href="https://wa.me/918977237103"
+                    href="https://wa.me/987654321"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="social-icon whatsapp-icon"
@@ -241,7 +248,6 @@ export default function Contact() {
                   </IconButton>
                 </Tooltip>
               </Box>
-
               <Typography className="social-detail">
                 Click an icon to connect with me.
               </Typography>
@@ -254,6 +260,26 @@ export default function Contact() {
           © 2026 MUTTIREDDY.RAJGOPAL
         </Typography>
       </Box>
+
+      {/* Success Snackbar */}
+      <Snackbar
+        open={snackbarOpen}
+        autoHideDuration={5000}
+        onClose={handleSnackbarClose}
+        anchorOrigin={{
+          vertical: "bottom",
+          horizontal: "center",
+        }}
+      >
+        <Alert
+          onClose={handleSnackbarClose}
+          severity="success"
+          variant="filled"
+          sx={{ width: "100%" }}
+        >
+         Your details Saved successfully Rajgopal  !
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }
