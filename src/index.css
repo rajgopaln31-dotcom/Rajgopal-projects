@@ -20,8 +20,13 @@ html {
 
 body {
   margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
   background: #2b2b2b;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
 }
+
 #root {
   min-height: 100vh;
   padding: 24px;
@@ -29,6 +34,7 @@ body {
 }
 
 /* ===== SAME OFFICE BACKGROUND FOR ALL 3 PAGES ===== */
+
 .page-panel {
   width: calc(100% - 56px);
   max-width: 1200px;
@@ -36,10 +42,13 @@ body {
   margin: 0 auto 28px;
   box-sizing: border-box;
   border: 1px solid #3a3a3a;
-  /* Office image + dark overlay - same as your photo */
-  background: linear-gradient(rgba(20,28,38,0.78), rgba(20,28,38,0.84)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600') center/cover no-repeat;
+  background:
+    linear-gradient(rgba(20, 28, 38, 0.4), rgba(20, 28, 38, 0.2)),
+    url('/src/assets/office-bg.jpg') center/cover no-repeat;
   min-height: 460px;
 }
+
+/* ===== HEADER ===== */
 
 .site-header {
   display: flex;
@@ -73,14 +82,8 @@ body {
   padding: 5px 10px;
   border-radius: 4px;
 }
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background: #2b2b2b;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-}
+
+/* ===== PAGE LAYOUT ===== */
 
 .home-page {
   padding: 82px 10%;
@@ -106,7 +109,7 @@ body {
   z-index: 2;
 }
 
-/* Home page */
+/* ===== HOME PAGE ===== */
 
 .hero-section {
   display: flex;
@@ -132,11 +135,13 @@ body {
 .hero-description.MuiTypography-root {
   max-width: 440px;
   margin-bottom: 18px;
-  color: #d6d3d1;
+  color: #fcfaf9;
   font-size: 12px;
   line-height: 1.8;
   font-weight: 400;
 }
+
+/* ===== HERO BUTTONS ===== */
 
 .hero-actions {
   display: flex;
@@ -171,24 +176,30 @@ body {
   text-transform: none;
 }
 
+/* ===== PROFILE AVATAR ===== */
+
 .profile-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
   display: flex;
-  flex: 0 0 168px;
-  width: 168px;
-  height: 168px;
   align-items: center;
   justify-content: center;
-  border-radius: 50%;
-  background: #a8c0c2;
-  border: 4px solid #f5f5f0;
+  border: 4px solid #dedede;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
 }
 
-.profile-initials.MuiTypography-root {
-  color: #292524;
-  font-size: 52px;
-  font-weight: 600;
-  letter-spacing: 1px;
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
+
+/* ===== SKILLS ===== */
 
 .skills-section {
   margin-top: 48px;
@@ -211,7 +222,7 @@ body {
   height: 25px;
   border: 1px solid #1e4d5a;
   border-radius: 16px;
-  background: rgba(0,0,0,0.35);
+  background: rgba(0, 0, 0, 0.35);
   color: #d6d3d1;
   font-family: inherit;
   font-size: 10px;
@@ -228,7 +239,7 @@ body {
   font-weight: 400;
 }
 
-/* Section headings */
+/* ===== SECTION HEADINGS ===== */
 
 .section-title.MuiTypography-root {
   margin: 0 0 4px;
@@ -246,7 +257,7 @@ body {
   line-height: 1.7;
 }
 
-/* Projects page */
+/* ===== PROJECTS PAGE ===== */
 
 .project-search.MuiTextField-root {
   width: 217px;
@@ -289,12 +300,16 @@ body {
   gap: 12px;
 }
 
+/* ===== PROJECT CARDS ===== */
+
 .project-card.MuiCard-root {
   min-width: 0;
-  border: none;
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 6px;
-  background: #f5f5f0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  background: rgba(25, 35, 48, 0.48);
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
 }
 
 .project-card-content.MuiCardContent-root {
@@ -307,8 +322,8 @@ body {
 
 .project-title.MuiTypography-root {
   margin-bottom: 4px;
-  color: #1e4d5a;
-  font-size: 11px;
+  color: #f3f8f9;
+  font-size: 16px;
   line-height: 1.5;
   font-weight: 600;
 }
@@ -316,7 +331,7 @@ body {
 .project-description.MuiTypography-root {
   min-height: 18px;
   margin-bottom: 10px;
-  color: #57534e;
+  color: #f4f1f0;
   font-size: 10px;
   line-height: 1.6;
 }
@@ -330,7 +345,7 @@ body {
 
 .project-technology.MuiTypography-root,
 .project-stars.MuiTypography-root {
-  color: #57534e;
+  color: #f0eeec;
   font-size: 9px;
 }
 
@@ -338,7 +353,7 @@ body {
   min-width: 0;
   margin-left: auto;
   padding: 2px 0 2px 5px;
-  color: #1e4d5a;
+  color: #ed5109;
   font-family: inherit;
   font-size: 9px;
   font-weight: 600;
@@ -351,7 +366,7 @@ body {
   font-size: 12px;
 }
 
-/* Contact page */
+/* ===== CONTACT PAGE ===== */
 
 .contact-grid {
   display: grid;
@@ -362,11 +377,12 @@ body {
 }
 
 .contact-card.MuiCard-root {
-  min-width: 0;
-  border: none;
-  border-radius: 7px;
-  background: #f5f5f0;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+  background: transparent;
+  backdrop-filter: blur(1px);
+  -webkit-backdrop-filter: blur(1px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
 }
 
 .contact-card-content.MuiCardContent-root {
@@ -385,8 +401,8 @@ body {
 
 .form-label.MuiTypography-root {
   margin: 0 0 5px;
-  color: #44403c;
-  font-size: 10px;
+  color: #fcfaf9;
+  font-size: 20px;
   font-weight: 500;
 }
 
@@ -397,8 +413,8 @@ body {
 .contact-input .MuiOutlinedInput-root {
   min-height: 30px;
   border-radius: 6px;
-  background: #fff;
-  color: #293241;
+  background: transparent;
+  color: #eeeff1;
   font-family: inherit;
   font-size: 12px;
 }
@@ -408,18 +424,19 @@ body {
 }
 
 .contact-input .MuiOutlinedInput-notchedOutline {
-  border-color: #e7e5e4;
+  border-color: #e4e4e7;
 }
 
 .contact-input .MuiOutlinedInput-root:hover
 .MuiOutlinedInput-notchedOutline {
-  border-color: #e7e5e4;
+  border-color: #9f4518;
 }
 
 .contact-input .MuiOutlinedInput-root.Mui-focused
 .MuiOutlinedInput-notchedOutline {
   border-color: #1e4d5a;
 }
+
 .message-input .MuiOutlinedInput-root {
   min-height: 82px;
   align-items: flex-start;
@@ -436,7 +453,8 @@ body {
   color: #fff !important;
 }
 
-/* Social Card */
+/* ===== SOCIAL CARD ===== */
+
 .social-card {
   display: flex;
   align-items: center;
@@ -446,7 +464,7 @@ body {
 
 .social-title {
   margin-bottom: 25px !important;
-  color: #1c1917 !important;
+  color: #fffdfc !important;
   font-size: 20px !important;
   font-weight: 700 !important;
 }
@@ -456,13 +474,14 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 38px;
   margin: 20px 0;
 }
 
 .social-icon {
-  width: 52px;
-  height: 52px;
+  width: 12px;
+  height: 12px;
+  gap: 25px;
   border-radius: 50% !important;
   background: #fff !important;
   transition: transform 0.2s ease, background 0.2s ease;
@@ -494,12 +513,13 @@ body {
 
 .social-detail {
   margin-top: 15px !important;
-  color: #57534e;
+  color: #f7f6f4;
   font-size: 14px !important;
 }
 
-/* Responsive layout */
+/* ===== RESPONSIVE LAYOUT ===== */
 
+/* Mobile only: hide avatar image, preserve its space */
 @media (max-width: 700px) {
   .page-panel {
     width: calc(100% - 32px);
@@ -521,20 +541,27 @@ body {
     gap: 24px;
   }
 
-  .hero-title.MuiTypography-root {
-    font-size: 30px;
-    letter-spacing: -0.8px;
-  }
-
+  /* Keep the avatar container and its original space */
   .profile-circle {
+    visibility: hidden;
     flex-basis: 120px;
     width: 120px;
     height: 120px;
     align-self: center;
   }
 
+  /* Hide the image without collapsing the layout */
+  .profile-image {
+    visibility: hidden;
+  }
+
   .profile-initials.MuiTypography-root {
-    font-size: 40px;
+    visibility: hidden;
+  }
+
+  .hero-title.MuiTypography-root {
+    font-size: 30px;
+    letter-spacing: -0.8px;
   }
 
   .skills-section {
@@ -549,7 +576,11 @@ body {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-}@media (max-width: 420px) {
+}
+
+/* ===== SMALL MOBILE ===== */
+
+@media (max-width: 420px) {
   .page-panel {
     width: calc(100% - 20px);
   }

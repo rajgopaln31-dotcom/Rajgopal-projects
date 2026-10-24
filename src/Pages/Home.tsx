@@ -7,6 +7,7 @@ import {
 
 import { useNavigate } from "react-router-dom";
 import Headermenu from "../Components/Headermenu";
+import Raj from "../Images/Raj.png"
 
 
 const skills = [
@@ -62,9 +63,15 @@ export default function Home() {
           </Box>
 
           <Box className="profile-circle">
-            <Typography className="profile-initials">
-              MRG
-            </Typography>
+            <Box className="profile-circle">
+  <img
+    src={Raj}
+    alt="My Profile"
+    className="profile-image"
+  />
+</Box>
+            
+            
           </Box>
         </Box>
 

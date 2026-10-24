@@ -276,7 +276,7 @@ export default function Contact() {
         autoHideDuration={5000}
         onClose={handleSnackbarClose}
         anchorOrigin={{
-          vertical: "bottom",
+          vertical: "top",
           horizontal: "center",
         }}
       >
