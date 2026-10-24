@@ -3,12 +3,14 @@ import {
   Typography,
   Button,
   Chip,
+  useMediaQuery,
 } from "@mui/material";
 
 import { useNavigate } from "react-router-dom";
 import Headermenu from "../Components/Headermenu";
-import Raj from "../Images/Raj.png"
-
+import Raj from "../Images/Raj.png";
+import myvideo from "../assets/myvideo.mp4";
+import mobilevideo from "../assets/mobilevideo.mp4";
 
 const skills = [
   "HTML",
@@ -22,13 +24,38 @@ const skills = [
 export default function Home() {
   const navigate = useNavigate();
 
+  const isMobileOrTablet = useMediaQuery("(max-width: 900px)");
+
   return (
-    <>
-  
-    <Box  className="page-panel home-page">
-     <Headermenu/>
+    <Box className="page-panel home-page">
+      {/* Render only the video for the current screen size */}
+      {isMobileOrTablet ? (
+        <video
+          key="mobile-video"
+          className="page-background-video mobile-background-video"
+          autoPlay
+          loop
+          playsInline
+          aria-hidden="true"
+        >
+          <source src={mobilevideo} type="video/mp4" />
+        </video>
+      ) : (
+        <video
+          key="desktop-video"
+          className="page-background-video desktop-background-video"
+          autoPlay
+          loop
+          playsInline
+          aria-hidden="true"
+        >
+          <source src={myvideo} type="video/mp4" />
+        </video>
+      )}
+
+      <Headermenu />
+
       <Box className="home-content">
-      
         <Box className="hero-section">
           <Box className="hero-text">
             <Typography className="hero-title">
@@ -38,24 +65,24 @@ export default function Home() {
             </Typography>
 
             <Typography className="hero-description">
-              I build clean, fast web apps with React.Currently learning and<br/>
-               shipping every week.
+              I build clean, fast web apps with React. Currently learning and
+              <br />
+              shipping every week.
             </Typography>
 
             <Box className="hero-actions">
-              <Button 
+              <Button
                 variant="contained"
                 className="primary-button"
-                onClick={() =>navigate("/projects")}
-                 
+                onClick={() => navigate("/projects")}
               >
                 See my projects
               </Button>
 
-              <Button onClick={()=>navigate("/contact")}
+              <Button
+                onClick={() => navigate("/contact")}
                 variant="text"
                 className="text-button"
-               
               >
                 Get in touch
               </Button>
@@ -63,15 +90,11 @@ export default function Home() {
           </Box>
 
           <Box className="profile-circle">
-            <Box className="profile-circle">
-  <img
-    src={Raj}
-    alt="My Profile"
-    className="profile-image"
-  />
-</Box>
-            
-            
+            <img
+              src={Raj}
+              alt="My Profile"
+              className="profile-image"
+            />
           </Box>
         </Box>
 
@@ -96,6 +119,5 @@ export default function Home() {
         </Typography>
       </Box>
     </Box>
-    </>
   );
 }

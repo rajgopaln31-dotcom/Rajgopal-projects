@@ -11,7 +11,11 @@ import {
   Tooltip,
   Snackbar,
   Alert,
+  useMediaQuery,
 } from "@mui/material";
+
+import myvideo from "../assets/myvideo.mp4";
+import mobileVideo from "../assets/mobilevideo.mp4";
 
 import EmailIcon from "@mui/icons-material/Email";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
@@ -21,6 +25,8 @@ import WorkIcon from "@mui/icons-material/Work";
 import Headermenu from "../Components/Headermenu";
 
 export default function Contact() {
+  const isMobileOrTablet = useMediaQuery("(max-width: 900px)");
+
   const [nameValue, setNameValue] = useState("");
   const [emailValue, setEmailValue] = useState("");
   const [messageValue, setMessageValue] = useState("");
@@ -74,6 +80,31 @@ export default function Contact() {
 
   return (
     <Box className="page-panel contact-page" id="contact">
+      {/* Only one video is rendered at a time */}
+      {isMobileOrTablet ? (
+        <video
+          key="mobile-video"
+          className="page-background-video mobile-background-video"
+          autoPlay
+          loop
+          playsInline
+          aria-hidden="true"
+        >
+          <source src={mobileVideo} type="video/mp4" />
+        </video>
+      ) : (
+        <video
+          key="desktop-video"
+          className="page-background-video desktop-background-video"
+          autoPlay
+          loop
+          playsInline
+          aria-hidden="true"
+        >
+          <source src={myvideo} type="video/mp4" />
+        </video>
+      )}
+
       <Headermenu />
 
       <Box className="contact-content">
@@ -177,30 +208,33 @@ export default function Contact() {
                   required
                 />
 
-             <Button
-  type="submit"
-  variant="contained"
-  className="primary-button send-button"
-  fullWidth
-  disabled={!isFormValid}
-  sx={{
-    opacity: isFormValid ? 1 : 0.5,
-    cursor: isFormValid ? "pointer" : "not-allowed",
-    "&.Mui-disabled": {
-      backgroundColor: "#9e9e9e",
-      color: "#ffffff",
-      opacity: 0.5,
-    },
-  }}
->
-  Send message
-</Button>
+                <Button
+                  type="submit"
+                  variant="contained"
+                  className="primary-button send-button"
+                  fullWidth
+                  disabled={!isFormValid}
+                  sx={{
+                    opacity: isFormValid ? 1 : 0.5,
+                    cursor: isFormValid ? "pointer" : "not-allowed",
+                    "&.Mui-disabled": {
+                      backgroundColor: "#9e9e9e",
+                      color: "#ffffff",
+                      opacity: 0.5,
+                    },
+                  }}
+                >
+                  Send message
+                </Button>
               </Box>
             </CardContent>
           </Card>
 
           {/* Social Media Icons Card */}
-          <Card className="contact-card social-card" elevation={0}>
+          <Card
+            className="contact-card social-card"
+            elevation={0}
+          >
             <CardContent className="contact-card-content">
               <Typography className="social-title">
                 Other ways to reach me
@@ -257,6 +291,7 @@ export default function Contact() {
                   </IconButton>
                 </Tooltip>
               </Box>
+
               <Typography className="social-detail">
                 Click an icon to connect with me.
               </Typography>
@@ -286,7 +321,7 @@ export default function Contact() {
           variant="filled"
           sx={{ width: "100%" }}
         >
-         Your details Saved successfully Rajgopal  !
+          Your details Saved successfully Rajgopal!
         </Alert>
       </Snackbar>
     </Box>
