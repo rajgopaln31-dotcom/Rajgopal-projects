@@ -272,6 +272,12 @@ export default function Project() {
         <Typography className="page-footer">
           © 2026 MUTTIREDDY.RAJGOPAL
         </Typography>
+         {/* Moving Full Stack Developer Text */}
+                <Box className="developer-marquee">
+                  <Typography className="moving-developer">
+                    FULL STACK DEVELOPER
+                  </Typography>
+                </Box>
       </Box>
     </Box>
   );

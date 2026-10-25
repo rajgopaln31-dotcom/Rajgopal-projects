@@ -8,7 +8,7 @@ import {
 
 import { useNavigate } from "react-router-dom";
 import Headermenu from "../Components/Headermenu";
-import Raj from "../Images/Raj.png";
+import laptopAvatar from "../Images/laptop-avatar.png";
 import myvideo from "../assets/myvideo.mp4";
 import mobilevideo from "../assets/mobilevideo.mp4";
 
@@ -28,13 +28,13 @@ export default function Home() {
 
   return (
     <Box className="page-panel home-page">
-      {/* Render only the video for the current screen size */}
       {isMobileOrTablet ? (
         <video
           key="mobile-video"
           className="page-background-video mobile-background-video"
           autoPlay
           loop
+          //muted
           playsInline
           aria-hidden="true"
         >
@@ -46,6 +46,7 @@ export default function Home() {
           className="page-background-video desktop-background-video"
           autoPlay
           loop
+          //muted
           playsInline
           aria-hidden="true"
         >
@@ -61,13 +62,12 @@ export default function Home() {
             <Typography className="hero-title">
               Hi, I'm RAJGOPAL.
               <br />
-              Frontend Developer.
+              Full-stack Developer.
             </Typography>
 
             <Typography className="hero-description">
-              I build clean, fast web apps with React. Currently learning and
-              <br />
-              shipping every week.
+              I build clean, fast web apps with React.
+              Currently learning and shipping every week.
             </Typography>
 
             <Box className="hero-actions">
@@ -91,7 +91,7 @@ export default function Home() {
 
           <Box className="profile-circle">
             <img
-              src={Raj}
+              src={laptopAvatar}
               alt="My Profile"
               className="profile-image"
             />
@@ -99,7 +99,10 @@ export default function Home() {
         </Box>
 
         <Box className="skills-section">
-          <Typography className="skills-title">
+          <Typography className="skills-title"
+          sx={{
+            mb:3
+          }}>
             Skills
           </Typography>
 
@@ -114,9 +117,21 @@ export default function Home() {
           </Box>
         </Box>
 
-        <Typography className="page-footer">
+       
+        <Typography className="page-footer"
+        sx={{
+          mb:1
+        }}>
           © 2026 MUTTIREDDY.RAJGOPAL
         </Typography>
+
+
+         {/* Moving Full Stack Developer Text */}
+        <Box className="developer-marquee">
+          <Typography className="moving-developer">
+            FULL STACK DEVELOPER
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );

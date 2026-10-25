@@ -7,8 +7,8 @@ export default function Header() {
       <Typography sx={{
          fontfamily: "Roboto, Arial,sans-serif",
          lineHeight:"1.2",
-         fontWeight:"700",
-         fontStyle:"30px"
+         fontWeight:"900",
+         fontSize:"20px"
       }}className="brand-name">
        M.R.G
       </Typography>

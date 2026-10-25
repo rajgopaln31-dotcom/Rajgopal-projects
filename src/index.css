@@ -246,41 +246,58 @@ body {
   object-position: center;
   display: block;
 }
-.skills-section {
-  margin-top: 48px;
-}
-
-.skills-title.MuiTypography-root {
-  margin-bottom: 12px;
-  color: #e7e5e4;
-  font-size: 16px;
-  font-weight: 600;
-}
-
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-}
-
 .skill-chip.MuiChip-root {
   height: 25px;
-  border: 1px solid #1e4d5a;
+  border: 1px solid #00cfff;
   border-radius: 16px;
-  background: rgba(0, 0, 0, 0.35);
-  color: #d6d3d1;
+  background: rgba(0, 15, 35, 0.65);
+  color: #ffffff;
   font-family: inherit;
   font-size: 10px;
+  gap: 16px;
+
+  box-shadow: 0 0 6px rgba(0, 207, 255, 0.35);
+  animation: thunderSkill 1s ease-in-out infinite;
+  transition: all 0.3s ease;
 }
 
 .skill-chip .MuiChip-label {
   padding: 0 12px;
 }
 
+@keyframes thunderSkill {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 5px #00cfff;
+    border-color: #00cfff;
+  }
+
+  25% {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 0 12px #00cfff;
+  }
+
+  50% {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 0 4px #ffffff;
+    border-color: #ffffff;
+  }
+
+  75% {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 14px #0088ff;
+  }
+}
+
+.skill-chip.MuiChip-root:hover {
+  transform: scale(1.08);
+  background: rgba(0, 100, 180, 0.5);
+  box-shadow: 0 0 18px #00cfff;
+}
 .page-footer.MuiTypography-root {
   margin-top: 34px;
-  color: #a8a29e;
-  font-size: 9px;
+  color: #f7f5f3;
+  font-size: 11px;
   font-weight: 400;
 }
 
@@ -300,6 +317,59 @@ body {
   color: #d6d3d1;
   font-size: 12px;
   line-height: 1.7;
+}
+/* Moving Full Stack Developer text */
+.developer-marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 18px 0;
+  margin-top: 20px;
+  box-sizing: border-box;
+}
+
+.moving-developer {
+  display: block;
+  width: max-content;
+  max-width: none;
+  white-space: nowrap;
+
+  font-size: clamp(12px, 3vw, 18px) !important;
+  font-weight: 800 !important;
+  letter-spacing: 2px;
+
+  color: #fbfdfa;
+  text-shadow: 0 0 10px rgba(255, 55, 0, 0.55);
+
+  animation: developerMove 4s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes developerMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(
+      calc(50vw - 50%)
+    );
+  }
+}
+
+@media (max-width: 600px) {
+  .developer-marquee {
+    margin-top: 12px;
+  }
+
+  .moving-developer {
+    letter-spacing: 1px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .moving-developer {
+    animation: none;
+  }
 }
 
 /* ===== PROJECTS PAGE ===== */
