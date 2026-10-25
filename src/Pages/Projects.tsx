@@ -79,7 +79,7 @@ export default function Project() {
     : projects;
 
   return (
-    <Box className="page-panel projects-page" id="projects">
+  <Box className="page-panel projects-page moving-neon-border ">
       {/* Render only the video for the current screen size */}
       {isMobileOrTablet ? (
         <video

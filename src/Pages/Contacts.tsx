@@ -79,7 +79,7 @@ export default function Contact() {
   };
 
   return (
-    <Box className="page-panel contact-page" id="contact">
+    <Box className="page-panel contact-page moving-neon-border ">
       {/* Only one video is rendered at a time */}
       {isMobileOrTablet ? (
         <video
