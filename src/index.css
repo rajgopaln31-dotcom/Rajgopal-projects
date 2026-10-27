@@ -990,7 +990,7 @@ body {
 .moving-neon-border {
   position: relative;
   isolation: isolate;
-  border: 10px solid transparent;
+  border: 5px solid transparent;
   border-radius: 16px;
   background:
     linear-gradient(#111827, #111827) padding-box,
@@ -1019,4 +1019,152 @@ body {
   to {
     --neon-angle: 360deg;
   }
+}
+
+/* Reduce main content height further */
+.home-page {
+  padding-top: 35px;
+  padding-bottom: 15px;
+}
+
+.projects-page {
+  padding-top: 25px;
+  padding-bottom: 15px;
+  min-height: auto;
+}
+
+.contact-page {
+  padding-top: 15px;
+  padding-bottom: 18px;
+  min-height: auto;
+}
+
+/* Reduce header spacing */
+.site-header {
+  margin-bottom: 15px;
+}
+
+/* Keep content wider */
+.home-content,
+.projects-content,
+.contact-content {
+  max-width: 1050px;
+}
+/* Header layout */
+.site-header {
+  position: relative;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 16px 24px;
+}
+
+/* Brand */
+.brand-name {
+  flex-shrink: 0;
+}
+
+/* Desktop navigation */
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Navigation links */
+.header-nav .nav-link {
+  color: inherit;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.2s ease;
+}
+
+.header-nav .nav-link:hover {
+  opacity: 0.7;
+}
+
+/* Hamburger hidden on desktop */
+.menu-toggle {
+  display: none;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 14px 16px;
+  }
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1002;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Hide links until clicked */
+  .header-nav {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    right: 12px;
+    z-index: 1001;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    min-width: 180px;
+    padding: 8px 0;
+    background-color: #ffffff;
+    color: #222222;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Show links when menu is open */
+  .header-nav.menu-open {
+    display: flex !important;
+  }
+
+  .header-nav .nav-link {
+    display: block;
+    padding: 14px 18px;
+    color: #222222;
+    font-size: 16px;
+  }
+
+  .header-nav .nav-link:hover,
+  .header-nav .nav-link.active {
+    background-color: #f2f2f2;
+  }
+}
+.profile-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.profile-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
 }
