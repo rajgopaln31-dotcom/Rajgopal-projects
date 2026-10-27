@@ -101,7 +101,7 @@ export default function Home() {
                 className="primary-button"
                 onClick={() => navigate("/projects")}
               >
-                See My projects
+                See my projects
               </Button>
 
               <Button
