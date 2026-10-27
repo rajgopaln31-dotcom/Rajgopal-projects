@@ -7,7 +7,6 @@ import {
 } from "@mui/material";
 
 import { useNavigate } from "react-router-dom";
-
 import {
   FaHtml5,
   FaCss3Alt,
@@ -18,9 +17,11 @@ import {
 } from "react-icons/fa";
 
 import Headermenu from "../Components/Headermenu";
-import avatarVideo from "../Images/avatarvideo.png";
+import laptopAvatar from "../Images/laptop-avatar.png";
 import myvideo from "../assets/myvideo.mp4";
 import mobilevideo from "../assets/mobilevideo.mp4";
+
+
 
 const skills = [
   { name: "HTML", icon: <FaHtml5 />, color: "#E34F26" },
@@ -55,7 +56,7 @@ export default function Home() {
           className="page-background-video desktop-background-video"
           autoPlay
           loop
-          
+        
           playsInline
           aria-hidden="true"
         >
@@ -78,7 +79,11 @@ export default function Home() {
                 >
                   👋
                 </span>
-            
+                <span
+                  className="hero-thumbs"
+                  role="img"
+                  aria-label="Thumbs up"
+                ></span>
                 , I'm RAJGOPAL.
               </span>
 
@@ -91,8 +96,7 @@ export default function Home() {
 
             <Typography className="hero-description">
               I build clean, fast web apps with React.
-              Currently <br />
-              learning and shipping every week.
+              Currently <br/>learning and shipping every week.
             </Typography>
 
             <Box className="hero-actions">
@@ -114,20 +118,12 @@ export default function Home() {
             </Box>
           </Box>
 
-          {/* Circular Video Avatar */}
           <Box className="profile-circle">
-            <video
+            <img
+              src={laptopAvatar}
+              alt="My Profile"
               className="profile-image"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-              aria-label="My animated profile avatar"
-            >
-              <source src={avatarVideo} type="video/mp4" />
-              Your browser does not support video playback.
-            </video>
+            />
           </Box>
         </Box>
 
@@ -141,7 +137,7 @@ export default function Home() {
             {skills.map((skill) => (
               <Chip
                 key={skill.name}
-              icon={
+                icon={
                   <span
                     className="skill-icon"
                     style={{ color: skill.color }}
@@ -152,16 +148,15 @@ export default function Home() {
                 label={skill.name}
                 className="skill-chip"
               />
-            ))}
+          ))}
           </Box>
         </Box>
 
-        {/* Footer */}
         <Typography className="page-footer" sx={{ mb: 1 }}>
           © 2026 MUTTIREDDY.RAJGOPAL
         </Typography>
 
-        {/* Moving Developer Text */}
+        {/* Moving developer text */}
         <Box className="developer-marquee">
           <Box className="developer-marquee-track">
             {[0, 1].map((item) => (
