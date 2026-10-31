@@ -1,0 +1,248 @@
+/* Common Styles */
+
+.forgot-page {
+  min-height: 100vh;
+  padding: 25px 4%;
+  box-sizing: border-box;
+  background: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+.back-button {
+  color: #111827 !important;
+}
+
+.forgot-content {
+  width: 100%;
+  max-width: 720px;
+  margin: 90px auto 0;
+}
+
+.forgot-title {
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  color: #111827;
+  margin-bottom: 24px !important;
+}
+
+.forgot-description {
+  font-size: 22px !important;
+  line-height: 1.6 !important;
+  color: #a1a9b3;
+  margin-bottom: 50px !important;
+}
+
+/* Email / Phone Switch */
+
+.type-switch {
+  display: flex;
+  padding: 5px;
+  margin-bottom: 45px;
+  border: 2px solid #e5e7eb;
+  border-radius: 50px;
+  background: #f8f9fb;
+}
+
+.type-switch .MuiButton-root {
+  width: 50%;
+  min-height: 65px;
+  border-radius: 40px;
+  font-size: 20px;
+  text-transform: none;
+}
+
+.type-switch .type-active {
+  background: #ffffff;
+  color: #199b90;
+}
+
+.type-switch .type-option {
+  color: #a1a9b3;
+}
+
+/* Input */
+
+.forgot-input .MuiOutlinedInput-root {
+  min-height: 85px;
+  border-radius: 45px;
+  background: #f8f9fb;
+  font-size: 20px;
+}
+
+.forgot-input .MuiOutlinedInput-notchedOutline {
+  border-color: #e5e7eb;
+}
+
+.forgot-input .MuiInputAdornment-root .MuiSvgIcon-root {
+  color: #199b90;
+  font-size: 28px;
+}
+
+.forgot-input .MuiFormHelperText-root {
+  font-size: 14px;
+}
+
+.valid-icon {
+  color: #199b90 !important;
+}
+
+/* Reset Button */
+
+.reset-button.MuiButton-root {
+  width: 100%;
+  min-height: 85px;
+  margin-top: 55px;
+  border-radius: 50px;
+  background: #199b90;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: none;
+  box-shadow: none;
+}
+
+.reset-button.MuiButton-root:hover {
+  background: #13877e;
+  box-shadow: none;
+}
+
+.success-message {
+  margin-top: 16px !important;
+  text-align: center;
+  color: #199b90;
+}
+
+/* Desktop: Grey Background + White Card */
+
+@media (min-width: 1025px) {
+  .forgot-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: #e5e7eb !important;
+  }
+
+  .forgot-page .forgot-content {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    min-height: 620px;
+    margin: 40px auto;
+    padding: 55px 65px;
+    box-sizing: border-box;
+
+    /* White Card */
+    background-color: #ffffff !important;
+    border: 1px solid #d1d5db;
+    border-radius: 24px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+  }
+
+  .forgot-title {
+    font-size: 36px !important;
+  }
+
+  .forgot-description {
+    font-size: 22px !important;
+  }
+}
+
+/* Tablet: Existing Layout */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .forgot-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 25px 4%;
+    background: #ffffff !important;
+  }
+
+  .forgot-page .forgot-content {
+    width: 100%;
+    max-width: 720px;
+    margin: 90px auto 0;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* Mobile: Existing Layout */
+
+@media (max-width: 767px) {
+  .forgot-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 15px 6%;
+    background: #ffffff !important;
+  }
+
+  .forgot-page .forgot-content {
+    width: 100%;
+    max-width: 100%;
+    margin: 65px auto 0;
+    padding: 0;
+    background: transparent !important;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .forgot-title {
+    font-size: 27px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .forgot-description {
+    font-size: 16px !important;
+    margin-bottom: 35px !important;
+  }
+
+  .type-switch {
+    margin-bottom: 30px;
+  }
+
+  .type-switch .MuiButton-root {
+    min-height: 55px;
+    font-size: 16px;
+  }
+
+  .forgot-input .MuiOutlinedInput-root {
+    min-height: 65px;
+    font-size: 15px;
+  }
+
+  .forgot-input .MuiInputAdornment-root .MuiSvgIcon-root {
+    font-size: 23px;
+  }
+
+  .reset-button.MuiButton-root {
+    min-height: 65px;
+    margin-top: 35px;
+    font-size: 18px;
+  }
+}
+@media (min-width: 1025px) {
+  .forgot-page {
+    min-height: 100vh !important;
+    padding: 40px !important;
+    box-sizing: border-box;
+    background: #e5e7eb !important;
+  }
+
+  .forgot-page .forgot-content {
+    width: 100% !important;
+    max-width: 850px !important;
+    min-height: 620px;
+    margin: 40px auto !important;
+    padding: 55px 65px !important;
+    box-sizing: border-box;
+
+    background: #ffffff !important;
+    border: 2px solid #d1d5db !important;
+    border-radius: 24px !important;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15) !important;
+  }
+}

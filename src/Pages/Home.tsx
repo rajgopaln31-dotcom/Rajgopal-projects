@@ -21,7 +21,11 @@ import laptopAvatar from "../Images/laptop-avatar.png";
 import myvideo from "../assets/myvideo.mp4";
 import mobilevideo from "../assets/mobilevideo.mp4";
 
+// CSS imports
 
+import "../Styles/Home.css";
+import "../Styles/Fonts.css";
+import "../Styles/Global.css"
 
 const skills = [
   { name: "HTML", icon: <FaHtml5 />, color: "#E34F26" },
@@ -55,8 +59,8 @@ export default function Home() {
           key="desktop-video"
           className="page-background-video desktop-background-video"
           autoPlay
-          loop
-        
+          
+          
           playsInline
           aria-hidden="true"
         >
@@ -83,7 +87,7 @@ export default function Home() {
                   className="hero-thumbs"
                   role="img"
                   aria-label="Thumbs up"
-                ></span>
+                />
                 , I'm RAJGOPAL.
               </span>
 
@@ -96,7 +100,8 @@ export default function Home() {
 
             <Typography className="hero-description">
               I build clean, fast web apps with React.
-              Currently <br/>learning and shipping every week.
+              Currently <br />
+              learning and shipping every week.
             </Typography>
 
             <Box className="hero-actions">
@@ -146,9 +151,9 @@ export default function Home() {
                   </span>
                 }
                 label={skill.name}
-                className="skill-chip"
+               className="skill-chip"
               />
-          ))}
+            ))}
           </Box>
         </Box>
 

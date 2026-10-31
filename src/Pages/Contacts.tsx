@@ -1,4 +1,5 @@
 import { useState, type FormEvent } from "react";
+import type React from "react";
 
 import {
   Box,
@@ -23,6 +24,10 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 import WorkIcon from "@mui/icons-material/Work";
 
 import Headermenu from "../Components/Headermenu";
+
+import "../styles/Fonts.css";
+import "../styles/Global.css";
+import "../styles/Contact.css";
 
 export default function Contact() {
   const isMobileOrTablet = useMediaQuery("(max-width: 900px)");
@@ -79,8 +84,7 @@ export default function Contact() {
   };
 
   return (
-    <Box className="page-panel contact-page moving-neon-border ">
-      {/* Only one video is rendered at a time */}
+    <Box className="page-panel contact-page moving-neon-border">
       {isMobileOrTablet ? (
         <video
           key="mobile-video"
@@ -117,7 +121,6 @@ export default function Contact() {
         </Typography>
 
         <Box className="contact-grid">
-          {/* Contact Form Card */}
           <Card className="contact-card" elevation={0}>
             <CardContent className="contact-card-content">
               <Box
@@ -214,15 +217,6 @@ export default function Contact() {
                   className="primary-button send-button"
                   fullWidth
                   disabled={!isFormValid}
-                  sx={{
-                    opacity: isFormValid ? 1 : 0.5,
-                    cursor: isFormValid ? "pointer" : "not-allowed",
-                    "&.Mui-disabled": {
-                      backgroundColor: "#9e9e9e",
-                      color: "#ffffff",
-                      opacity: 0.5,
-                    },
-                  }}
                 >
                   Send message
                 </Button>
@@ -230,7 +224,6 @@ export default function Contact() {
             </CardContent>
           </Card>
 
-          {/* Social Media Icons Card */}
           <Card
             className="contact-card social-card"
             elevation={0}
@@ -280,7 +273,7 @@ export default function Contact() {
 
                 <Tooltip title="GitHub">
                   <IconButton
-                    component="a"
+                  component="a"
                     href="https://github.com/rajgopaln31-dotcom/rajgopal"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -299,11 +292,10 @@ export default function Contact() {
           </Card>
         </Box>
 
-        {/* Footer */}
         <Typography className="page-footer">
           © 2026 MUTTIREDDY.RAJGOPAL
         </Typography>
-         {/* Moving Full Stack Developer Text */}
+
         <Box className="developer-marquee">
           <Typography className="moving-developer">
             FULL STACK DEVELOPER
@@ -311,7 +303,6 @@ export default function Contact() {
         </Box>
       </Box>
 
-      {/* Success Snackbar */}
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={5000}
@@ -325,7 +316,7 @@ export default function Contact() {
           onClose={handleSnackbarClose}
           severity="success"
           variant="filled"
-          sx={{ width: "100%" }}
+          className="contact-success-alert"
         >
           Your details Saved successfully Rajgopal!
         </Alert>

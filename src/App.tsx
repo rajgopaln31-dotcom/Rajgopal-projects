@@ -1,16 +1,19 @@
 
-import AppRoutes from "./Routes/AppRoutes";
+//import AppRoutes from "./Routes/AppRoutes";
+//import Skills from "./Pages/Skills";
 
-
-
+import LoginRoutes from "./Routes/LoginRoutes"
  function App() {
    return (
     <>
 
-     <AppRoutes/>
-     
+<LoginRoutes/>
+
+ {/* <Skills/>  */}
+  
+     {/* <AppRoutes/> */}
     
-          </>
+         </>
              );
             }
  export default App;

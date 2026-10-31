@@ -14,6 +14,10 @@ import Headermenu from "../Components/Headermenu";
 import myvideo from "../assets/myvideo.mp4";
 import mobilevideo from "../assets/mobilevideo.mp4";
 
+import "../styles/Fonts.css";
+import "../Styles/Global.css"
+import "../styles/Projects.css";
+
 const projects = [
   {
     title: "Portfolio Website",
@@ -73,14 +77,11 @@ export default function Project() {
   );
 
   const visibleProjects = selectedProject
-    ? projects.filter(
-        (project) => project.title === selectedProject
-      )
+    ? projects.filter((project) => project.title === selectedProject)
     : projects;
 
   return (
-  <Box className="page-panel projects-page moving-neon-border ">
-      {/* Render only the video for the current screen size */}
+    <Box className="page-panel projects-page moving-neon-border">
       {isMobileOrTablet ? (
         <video
           key="mobile-video"
@@ -116,8 +117,7 @@ export default function Project() {
           Things I built while learning.
         </Typography>
 
-        {/* Search field and dropdown */}
-        <Box sx={{ position: "relative" }}>
+        <Box className="project-search-wrapper">
           <TextField
             className="project-search"
             placeholder="Search projects"
@@ -125,9 +125,7 @@ export default function Project() {
             onChange={(event) => {
               setSearch(event.target.value);
               setSelectedProject("");
-              setDropdownOpen(
-                event.target.value.trim() !== ""
-              );
+              setDropdownOpen(event.target.value.trim() !== "");
             }}
             onFocus={() => {
               if (search.trim() && !selectedProject) {
@@ -140,51 +138,12 @@ export default function Project() {
           />
 
           {dropdownOpen && search.trim() !== "" && (
-            <Box
-              sx={{
-                position: "absolute",
-                top: "100%",
-                left: 0,
-                right: 0,
-                zIndex: 10,
-                mt: 1,
-                backgroundColor: "#ffffff",
-                border: "1px solid #e0e7ff",
-                borderRadius: "10px",
-                boxShadow: "0 6px 18px rgba(0,0,0,0.10)",
-                maxHeight: "240px",
-                overflowY: "auto",
-              }}
-              >
-              {/* Dropdown close button */}
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  padding: "4px 8px",
-                  borderBottom: "1px solid #eeeeee",
-                  position: "sticky",
-                  top: 0,
-                  backgroundColor: "#ffffff",
-                  zIndex: 1,
-                }}
-              >
+            <Box className="project-dropdown">
+              <Box className="project-dropdown-header">
                 <Button
+                  className="project-dropdown-close"
                   onClick={() => setDropdownOpen(false)}
                   aria-label="Close dropdown"
-                  sx={{
-                    minWidth: "28px",
-                    width: "28px",
-                    height: "28px",
-                    padding: 0,
-                    color: "#555555",
-                    fontSize: "20px",
-                    lineHeight: 1,
-                    "&:hover": {
-                      backgroundColor: "#fee2e2",
-                      color: "#dc2626",
-                    },
-                  }}
                 >
                   ×
                 </Button>
@@ -194,34 +153,18 @@ export default function Project() {
                 filteredSuggestions.map((project) => (
                   <Box
                     key={project.title}
+                    className="project-dropdown-item"
                     onClick={() => {
                       setSelectedProject(project.title);
                       setSearch(project.title);
                       setDropdownOpen(false);
-                    }}
-                    sx={{
-                      padding: "10px 14px",
-                      cursor: "pointer",
-                      color: "#222222",
-                      fontSize: "14px",
-                      transition: "background-color 0.2s ease",
-                      "&:hover": {
-                        backgroundColor: "#eef4ff",
-                        color: "#1565c0",
-                      },
                     }}
                   >
                     {project.title}
                   </Box>
                 ))
               ) : (
-                <Box
-                  sx={{
-                    padding: "12px",
-                    color: "#777777",
-                    fontSize: "14px",
-                  }}
-                >
+                <Box className="project-dropdown-empty">
                   No projects found.
                 </Box>
               )}
@@ -229,7 +172,6 @@ export default function Project() {
           )}
         </Box>
 
-        {/* Selected project or all six projects */}
         <Box className="projects-grid">
           {visibleProjects.map((project) => (
             <Card
@@ -272,12 +214,12 @@ export default function Project() {
         <Typography className="page-footer">
           © 2026 MUTTIREDDY.RAJGOPAL
         </Typography>
-         {/* Moving Full Stack Developer Text */}
-                <Box className="developer-marquee">
-                  <Typography className="moving-developer">
-                    FULL STACK DEVELOPER
-                  </Typography>
-                </Box>
+
+        <Box className="developer-marquee">
+          <Typography className="moving-developer">
+            FULL STACK DEVELOPER
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );
