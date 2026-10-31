@@ -84,7 +84,7 @@
 
 @media (min-width: 1025px) {
   .welcome-page {
-    min-height: 110vh;
+    min-height: 130vh;
     padding: 40px;
     box-sizing: border-box;
     background-color: #e5e7eb;
