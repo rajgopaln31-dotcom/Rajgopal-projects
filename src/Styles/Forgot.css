@@ -111,65 +111,52 @@
   color: #199b90;
 }
 
-/* Desktop: Grey Background + White Card */
-
 @media (min-width: 1025px) {
   .forgot-page {
-    width: 100%;
     min-height: 100vh;
-    padding: 40px;
+    padding: 20px 30px;
     box-sizing: border-box;
-    background-color: #e5e7eb !important;
+    background: #e5e7eb !important;
   }
 
   .forgot-page .forgot-content {
-    position: relative;
     width: 100%;
-    max-width: 850px;
-    min-height: 620px;
-    margin: 40px auto;
-    padding: 55px 65px;
+    max-width: 1190px;
+    min-height: 0;
+    margin: 20px auto;
+    padding: 25px 65px;
     box-sizing: border-box;
-
-    /* White Card */
-    background-color: #ffffff !important;
-    border: 1px solid #d1d5db;
+    background: #ffffff !important;
+    border: 2px solid #d1d5db;
     border-radius: 24px;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
   }
 
   .forgot-title {
     font-size: 36px !important;
+    margin-bottom: 12px !important;
   }
 
   .forgot-description {
     font-size: 22px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .type-switch {
+    margin-bottom: 18px;
+  }
+
+  .forgot-input .MuiOutlinedInput-root {
+    min-height: 65px;
+  }
+
+  .reset-button.MuiButton-root {
+    min-height: 65px;
+    margin-top: 20px;
   }
 }
 
-/* Tablet: Existing Layout */
-
-@media (min-width: 768px) and (max-width: 1024px) {
-  .forgot-page {
-    width: 100%;
-    min-height: 100vh;
-    padding: 25px 4%;
-    background: #ffffff !important;
-  }
-
-  .forgot-page .forgot-content {
-    width: 100%;
-    max-width: 720px;
-    margin: 90px auto 0;
-    padding: 0;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-  }
-}
-
-/* Mobile: Existing Layout */
+/* Mobile: Unchanged */
 
 @media (max-width: 767px) {
   .forgot-page {
@@ -222,27 +209,5 @@
     min-height: 65px;
     margin-top: 35px;
     font-size: 18px;
-  }
-}
-@media (min-width: 1025px) {
-  .forgot-page {
-    min-height: 100vh !important;
-    padding: 40px !important;
-    box-sizing: border-box;
-    background: #e5e7eb !important;
-  }
-
-  .forgot-page .forgot-content {
-    width: 100% !important;
-    max-width: 850px !important;
-    min-height: 620px;
-    margin: 40px auto !important;
-    padding: 55px 65px !important;
-    box-sizing: border-box;
-
-    background: #ffffff !important;
-    border: 2px solid #d1d5db !important;
-    border-radius: 24px !important;
-    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15) !important;
   }
 }

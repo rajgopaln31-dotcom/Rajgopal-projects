@@ -6,12 +6,11 @@ import LoginRoutes from "./Routes/LoginRoutes"
  function App() {
    return (
     <>
-
-<LoginRoutes/>
+<LoginRoutes/> 
 
  {/* <Skills/>  */}
   
-     {/* <AppRoutes/> */}
+     {/* <AppRoutes/>  */}
     
          </>
              );

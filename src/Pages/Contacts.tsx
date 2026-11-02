@@ -13,6 +13,7 @@ import {
   Snackbar,
   Alert,
   useMediaQuery,
+  CircularProgress,
 } from "@mui/material";
 
 import myvideo from "../assets/myvideo.mp4";
@@ -37,6 +38,7 @@ export default function Contact() {
   const [messageValue, setMessageValue] = useState("");
 
   const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [touched, setTouched] = useState({
     name: false,
@@ -62,7 +64,7 @@ export default function Contact() {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    if (!isFormValid) return;
+    if (!isFormValid || loading) return;
 
     const formData = new FormData(event.currentTarget);
 
@@ -72,7 +74,12 @@ export default function Contact() {
 
     console.log({ name, email, message });
 
-    setSnackbarOpen(true);
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+      setSnackbarOpen(true);
+    }, 2000);
   };
 
   const handleSnackbarClose = (
@@ -216,9 +223,16 @@ export default function Contact() {
                   variant="contained"
                   className="primary-button send-button"
                   fullWidth
-                  disabled={!isFormValid}
+                  disabled={!isFormValid || loading}
                 >
-                  Send message
+                  {loading ? (
+                    <CircularProgress
+                      size={24}
+                      color="inherit"
+                    />
+                  ) : (
+                    "Send message"
+                  )}
                 </Button>
               </Box>
             </CardContent>
@@ -273,7 +287,7 @@ export default function Contact() {
 
                 <Tooltip title="GitHub">
                   <IconButton
-                  component="a"
+                    component="a"
                     href="https://github.com/rajgopaln31-dotcom/rajgopal"
                     target="_blank"
                     rel="noopener noreferrer"
