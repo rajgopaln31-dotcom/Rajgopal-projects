@@ -26,6 +26,11 @@ function Forgot() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
 
+  const isValid =
+    type === "email"
+      ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+      : /^[0-9]{10}$/.test(value);
+
   const handleReset = () => {
     if (!value.trim()) {
       setError(
@@ -36,28 +41,20 @@ function Forgot() {
       return;
     }
 
-    if (
-      type === "email" &&
-      !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
-    ) {
-      setError("Please enter a valid email address");
-      return;
-    }
-
-    if (
-      type === "phone" &&
-      !/^[0-9]{10}$/.test(value)
-    ) {
-      setError("Enter a valid 10-digit phone number");
+    if (!isValid) {
+      setError(
+        type === "phone"
+          ? "Enter a valid 10-digit phone number"
+          : "Please enter a valid email address"
+      );
       return;
     }
 
     setError("");
     setSuccess(true);
 
-console.log("User Type:",type);
-console.log("User Details:",value);
-
+    console.log("User Type:", type);
+    console.log("User Details:", value);
 
     navigate("/otp", {
       state: {
@@ -148,7 +145,7 @@ console.log("User Details:",value);
                   )}
                 </InputAdornment>
               ),
-              endAdornment: success ? (
+              endAdornment: isValid ? (
                 <InputAdornment position="end">
                   <CheckIcon className="valid-icon" />
                 </InputAdornment>
@@ -162,6 +159,7 @@ console.log("User Details:",value);
           className="reset-button"
           variant="contained"
           onClick={handleReset}
+          disabled={!isValid}
         >
           Reset Password
         </Button>
