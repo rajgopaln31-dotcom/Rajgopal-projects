@@ -1,8 +1,8 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, } from "react-router-dom";
 
 import Home from "../Pages/Home";
 import Project from "../Pages/Projects";
-import Contact from "../Pages/Contacts";
+import Contact from "../Pages/Contact";
 
 export default function AppRoutes() {
   return (
@@ -12,7 +12,7 @@ export default function AppRoutes() {
       <Route path="/projects" element={<Project />} />
       <Route path="/contact" element={<Contact />} />
 
-      <Route path="*" element={<Navigate to="/" replace />} />
+    
     </Routes>
   );
 }
