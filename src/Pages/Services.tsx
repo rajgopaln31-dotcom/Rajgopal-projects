@@ -5,7 +5,7 @@ import DrawIcon from "@mui/icons-material/Draw";
 import CloudQueueIcon from "@mui/icons-material/CloudQueue";
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import QueryStatsIcon from "@mui/icons-material/QueryStats";
-import { PageLayout } from "../components/Layout";
+import { PageLayout } from "../Components/Layout";
 import "../styles/Services.css";
 import gopal from "../images/gopal.png";
 
