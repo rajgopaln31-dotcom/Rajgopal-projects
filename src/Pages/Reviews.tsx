@@ -17,7 +17,7 @@ const reviews = [
     text: "The team delivered our website exactly as we envisioned. Professional, responsive, and the web development was flawless. Highly recommend MegaViz for any software project."
   },
   {
-    name: "Siva Ganesh",
+    name: "Siva ganesh",
     initial: "S",
     text: "Excellent service and support throughout. They built our software solution with great attention to detail and delivered on time. Truly dependable partner."
   },
