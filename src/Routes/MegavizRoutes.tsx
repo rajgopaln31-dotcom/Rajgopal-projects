@@ -8,7 +8,7 @@ import Contact from "../Pages/Contact";
 
 
 
-import "../styles/Layout.css";
+import "../Styles/Layout.css";
 
 export default function App() {
   return (
