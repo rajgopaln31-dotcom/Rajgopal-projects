@@ -1,0 +1,10 @@
+.services-page { text-align: left; }
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 28px; }
+.service-card { border: 1px solid #438c80; border-radius: 12px; padding: 24px 18px; min-height: 220px; text-align: center; background: #111719; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.service-card .card-title { color: #64d8c4; }
+.service-card p { line-height: 1.55; }
+@media (max-width: 900px) { .services-grid { gap: 14px; } .service-card { min-height: 205px; } }
+@media (max-width: 600px) {
+ .services-grid { grid-template-columns: 1fr; }
+ .service-card { min-height: 175px; }
+}
