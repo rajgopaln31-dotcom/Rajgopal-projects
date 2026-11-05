@@ -7,8 +7,8 @@
   Typography
 } from "@mui/material";
 
-import "../styles/Reviews.css";
-import { PageLayout } from "../Components/Layout";
+import "../Styles/Reviews.css";
+//import { PageLayout } from "../Components/Layout";
 
 const reviews = [
   {
@@ -43,9 +43,9 @@ const reviews = [
   }
 ];
 
-export default function Review() {
+export default function Reviews() {
   return (
-    <PageLayout>
+  //  <PageLayout>
       <Box className="review-page">
         <Container maxWidth="xl" className="review-container">
 
@@ -116,6 +116,6 @@ export default function Review() {
 
         </Container>
       </Box>
-    </PageLayout>
+ //   </PageLayout>
   );
 }

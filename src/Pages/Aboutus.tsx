@@ -2,9 +2,9 @@ import { Box, Container, Typography } from "@mui/material";
 import TrackChangesIcon from "@mui/icons-material/TrackChanges";
 import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
 import MemoryIcon from "@mui/icons-material/Memory";
-import { PageLayout } from "../Components/Layout";
+//import { PageLayout } from "../Components/Layout";
 import "../Styles/Layout.css";
-import "../styles/AboutUs.css";
+import "../Styles/AboutUs.css";
 import story from "../images/story.jpg";
 
 
@@ -15,9 +15,9 @@ const reasons = [
   { icon: <TrackChangesIcon />, title: "Affordable Solutions", text: "Cost-effective services tailored to your budget and goals." }
 ];
 
-export default function AboutUs() {
+export default function Aboutus() {
   return (
-    <PageLayout>
+    //<PageLayout>
       <Container className="page about-page">
         <Typography className="page-title">About MegaVizTech</Typography>
         <Typography className="page-subtitle">Building digital products that empower businesses to innovate and succeed.</Typography>
@@ -48,6 +48,6 @@ export default function AboutUs() {
           ))}
         </Box>
       </Container>
-    </PageLayout>
+   // </PageLayout>
   );
 }

@@ -5,8 +5,8 @@ import SupportAgentOutlinedIcon from "@mui/icons-material/SupportAgentOutlined";
 import { Link } from "react-router-dom";
 
 import "../Styles/Layout.css";
-import "../styles/Home.css";
-import { PageLayout } from "../Components/Layout";
+import "../Styles/Home.css";
+//import { PageLayout } from "../Components/Layout";
 
 import video1 from "../images/video1.mp4";
 
@@ -27,7 +27,7 @@ const features = [
 
 export default function Home() {
   return (
-    <PageLayout>
+    //<PageLayout>
       <Container className="page home-page">
 
         <Typography className="hero-title">
@@ -128,6 +128,6 @@ export default function Home() {
         </Box>
 
       </Container>
-    </PageLayout>
+    //</PageLayout>
   );
 }

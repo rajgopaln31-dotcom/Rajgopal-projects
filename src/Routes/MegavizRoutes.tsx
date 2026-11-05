@@ -1,7 +1,7 @@
 import { Routes, Route,  } from "react-router-dom";
 
 import Home from "../Pages/Home";
-import AboutUs from "../Pages/Aboutus";
+import Aboutus from "../Pages/Aboutus";
 import Services from "../Pages/Services";
 import Reviews from "../Pages/Reviews";
 import Contact from "../Pages/Contact";
@@ -18,7 +18,7 @@ export default function App() {
 
       <Route path="/home" element={<Home />} />
 
-      <Route path="/about" element={<AboutUs />} />
+      <Route path="/about" element={<Aboutus />} />
 
       <Route path="/services" element={<Services />} />
 
