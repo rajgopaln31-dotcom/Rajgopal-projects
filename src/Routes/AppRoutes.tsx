@@ -6,7 +6,7 @@ import About from "../Pages/About";
 import Services from "../Pages/Services";
 import Reviews from "../Pages/Reviews";
 import Contact from "../Pages/Contact";
-import "../components/Layout.css";
+import "../Components/Layout.css";
 
 export default function AppRoutes() {
   return (
