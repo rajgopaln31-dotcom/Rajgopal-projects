@@ -213,3 +213,23 @@
     margin: 16px 0 22px;
   }
 }
+/* Disabled Button - Orange */
+.send-button-disabled {
+  background-color: #ff6500 !important;
+  color: #ffffff !important;
+  cursor: not-allowed !important;
+  opacity: 1 !important;
+}
+
+/* Enabled Button - Blue */
+.send-button-enabled {
+  background-color: #1976d2 !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  opacity: 1 !important;
+}
+
+/* Blue Button Hover */
+.send-button-enabled:hover {
+  background-color: #1565c0 !important;
+}

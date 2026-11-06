@@ -26,7 +26,7 @@ export default function NotFound() {
 
         <Button
           component={Link}
-          to="/home"
+          to="/"
           variant="contained"
           startIcon={<HomeOutlinedIcon />}
           className="back-home-button"
