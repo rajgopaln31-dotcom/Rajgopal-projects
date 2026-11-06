@@ -1,7 +1,7 @@
 .site-footer {
   width: 100%;
-  background-color: #ffffff;
-  color: #252525;
+  background-color: #19087a;
+  color: #f7f4f4;
   padding: 50px 0 20px;
   border-top: 2px solid #ff6500;
 }
@@ -35,13 +35,13 @@
 .footer-heading {
   font-size: 20px !important;
   font-weight: 700 !important;
-  color: #ff6500;
+  color: #fbf9f8;
   margin-bottom: 8px !important;
 }
 
 .footer-column a,
 .footer-column span {
-  color: #252525;
+  color: #f4f3f3;
   font-size: 15px;
   text-decoration: none;
 }
@@ -55,7 +55,7 @@
   border-top: 1px solid #eeeeee;
   margin-top: 35px !important;
   padding-top: 20px;
-  color: #555555;
+  color: #fbfafa;
   font-size: 14px !important;
 }
 

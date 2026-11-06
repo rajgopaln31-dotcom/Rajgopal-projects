@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo1 from "../assets/logo1.png";
 import "./Footer.css";
 
 export default function Footer() {
@@ -11,7 +11,7 @@ export default function Footer() {
         {/* Left Side - Logo */}
         <Box className="footer-logo">
           <Link to="/">
-            <img src={logo} alt="MegaViz Logo" />
+            <img src={logo1} alt="MegaViz Logo" />
           </Link>
         </Box>
 
