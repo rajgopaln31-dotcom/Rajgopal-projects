@@ -1,7 +1,14 @@
-  .site-header {
-  background: #101010 !important;
-  border-bottom: 1px solid #171717;
+.site-header {
+  background: #ffffff !important;
+  border-bottom: 2px solid #ff6500;
+
+  /* Sticky Header */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
 }
+
 .header-toolbar {
   width: min(1320px, 92%);
   min-height: 104px !important;
@@ -11,60 +18,88 @@
   justify-content: space-between;
   gap: 24px;
 }
+
 .brand {
   display: flex;
+  align-items: center;
+  text-decoration: none;
   flex-direction: column;
   line-height: 1;
   flex-shrink: 0;
 }
+
+.brand-logo {
+  width: 280px;
+  height: 100px;
+  object-fit: contain;
+  display: block;
+}
+
 .brand-name {
-  color: #fff;
+  color: #252525;
   font-size: clamp(32px, 4vw, 54px);
   font-weight: 800;
   letter-spacing: -2px;
 }
+
 .brand-name span {
   color: #ff6500;
 }
+
 .brand small {
   margin-top: 6px;
-  color: #ff8741;
+  color: #ff6500;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: .35px;
 }
+
 .nav-links {
   display: flex;
   align-items: center;
   gap: clamp(18px, 3vw, 42px);
 }
+
 .nav-link {
-  color: #f4f4f4;
-  font-size: 16px;
+  color: #ed6521;
+  font-size: 24px;
   font-weight: 700;
   transition: color .2s ease;
 }
-.nav-link:hover, .nav-link.active {
-  color: #ff6500;
+
+.nav-link:hover,
+.nav-link.active {
+  color: #03056a;
 }
+
 .header-cta.MuiButton-root {
   background: #ff6500;
-  color: #fff;
+  color: #ffffff;
   border-radius: 10px;
   padding: 12px 30px;
   font-size: 16px;
   min-width: 145px;
 }
-.header-cta.MuiButton-root:hover, .orange-button.MuiButton-root:hover {
+
+.header-cta.MuiButton-root:hover,
+.orange-button.MuiButton-root:hover {
   background: #e95700;
 }
+
 .mobile-menu-button.MuiIconButton-root {
   display: none;
-  color: #fff;
+  color: #252525;
 }
+
 @media (max-width: 850px) {
-  .header-toolbar { min-height: 82px !important; }
-  .mobile-menu-button.MuiIconButton-root { display: inline-flex; }
+  .header-toolbar {
+    min-height: 82px !important;
+  }
+
+  .mobile-menu-button.MuiIconButton-root {
+    display: inline-flex;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
@@ -72,33 +107,29 @@
     left: 0;
     width: 100%;
     padding: 22px 5%;
-    background: #101010;
-    border-top: 1px solid #333;
+    background: #ffffff;
+    border-top: 1px solid #eeeeee;
     flex-direction: column;
     align-items: stretch;
     gap: 20px;
     z-index: 20;
   }
-  .nav-links.nav-links-open { display: flex; }
-  .nav-link { padding: 4px 0; }
-  .header-cta.MuiButton-root { width: 100%; }
-}
-.brand {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-}
 
-.brand-logo {
-  width: 180px;
-  height: 60px;
-  object-fit: contain;
-  display: block;
-}
+  .nav-links.nav-links-open {
+    display: flex;
+  }
 
-@media (max-width: 768px) {
+  .nav-link {
+    padding: 4px 0;
+  }
+
+  .header-cta.MuiButton-root {
+    width: 100%;
+  }
+
   .brand-logo {
-    width: 140px;
-    height: 50px;
+    width: 300px;
+    height: 70px;
+    transform: translatex(-23px);
   }
 }

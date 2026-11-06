@@ -1,7 +1,7 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-//import StarIcon from "@mui/icons-material/Star";
 import GoogleIcon from "@mui/icons-material/Google";
 import "./Reviews.css";
+import "./NotFound.css";
 
 const reviews = [
   { initials: "SJ", name: "Satish Jawadi", text: "Excellent platform! The AI automation has saved us countless hours. Highly reliable and intuitive." },
@@ -27,6 +27,15 @@ export default function Reviews() {
           <b>Google Reviews</b>
         </Box>
       </Box>
+
+      <Box className="reviews-image">
+        <img
+          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=80"
+          alt="Team collaborating with customers"
+          loading="lazy"
+        />
+      </Box>
+
       <Box className="reviews-grid">
         {reviews.map((review) => (
           <Box className="review-card" key={review.name}>
@@ -41,9 +50,20 @@ export default function Reviews() {
           </Box>
         ))}
       </Box>
+
       <Box className="review-actions">
-        <Button className="orange-button" onClick={() => window.alert("More reviews can be added to the reviews list in Reviews.tsx.")}>Load More Reviews</Button>
-        <Button className="orange-button" onClick={() => window.open("https://www.google.com/search?q=MegaVizTech+reviews", "_blank", "noopener,noreferrer")}>Write a Review</Button>
+        <Button
+          className="orange-button"
+          onClick={() => window.alert("More reviews can be added to the reviews list in Reviews.tsx.")}
+        >
+          Load More Reviews
+        </Button>
+        <Button
+          className="orange-button"
+          onClick={() => window.open("https://www.google.com/search?q=MegaVizTech+reviews", "_blank", "noopener,noreferrer")}
+        >
+          Write a Review
+        </Button>
       </Box>
     </Container>
   );

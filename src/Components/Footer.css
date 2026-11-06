@@ -1,8 +1,9 @@
 .site-footer {
   width: 100%;
-  background-color: #111212;
-  color: #ffffff;
+  background-color: #ffffff;
+  color: #252525;
   padding: 50px 0 20px;
+  border-top: 2px solid #ff6500;
 }
 
 .footer-inner {
@@ -19,8 +20,8 @@
 }
 
 .footer-logo img {
-  width: 180px;
-  height: 80px;
+  width: 280px;
+  height: 110px;
   object-fit: contain;
 }
 
@@ -34,31 +35,30 @@
 .footer-heading {
   font-size: 20px !important;
   font-weight: 700 !important;
-  color: #ffffff;
+  color: #ff6500;
   margin-bottom: 8px !important;
 }
 
 .footer-column a,
 .footer-column span {
-  color: #cbd5e1;
+  color: #252525;
   font-size: 15px;
   text-decoration: none;
 }
 
 .footer-column a:hover {
-  color: #964f03;
+  color: #ff6500;
 }
 
 .copyright {
   text-align: center;
-  border-top: 1px solid #334155;
+  border-top: 1px solid #eeeeee;
   margin-top: 35px !important;
   padding-top: 20px;
-  color: #94a3b8;
+  color: #555555;
   font-size: 14px !important;
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
   .footer-inner {
     flex-direction: column;

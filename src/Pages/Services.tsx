@@ -6,6 +6,7 @@ import CloudQueueIcon from "@mui/icons-material/CloudQueue";
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import QueryStatsIcon from "@mui/icons-material/QueryStats";
 import "./Services.css";
+import "./NotFound.css";
 
 const services = [
   { icon: <CodeIcon />, title: "Web Development", text: "Custom responsive websites and web applications built with modern frameworks, optimized for performance, SEO, and seamless user experience across all devices." },
@@ -21,6 +22,15 @@ export default function Services() {
     <Container maxWidth="lg" className="services-page page-container">
       <Typography className="page-title">Our Services</Typography>
       <Typography className="page-subtitle">What We Do Best</Typography>
+
+      <Box className="services-image">
+        <img
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
+          alt="Web development workspace"
+          loading="lazy"
+        />
+      </Box>
+
       <Box className="services-grid">
         {services.map((service) => (
           <Box className="service-card" key={service.title}>

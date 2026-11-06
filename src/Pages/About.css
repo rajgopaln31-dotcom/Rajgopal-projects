@@ -1,29 +1,161 @@
-.about-page { padding-top: 28px; }
-.story-layout { display: grid; grid-template-columns: .95fr 1.05fr; gap: 55px; align-items: center; margin: 34px 0 24px; }
-.story-copy h3 { font-size: 38px; font-weight: 800; }
-.title-line { width: 170px; height: 3px; background: #ff6500; margin: 8px 0 14px; }
-.story-copy p { font-size: 17px; line-height: 1.55; color: #eee; }
-.about-photo { height: 250px; overflow: hidden; border-radius: 10px; }
-.about-photo img { width: 100%; height: 100%; object-fit: cover; }
-.about-bottom { display: grid; grid-template-columns: 1fr 1.12fr; gap: 22px; align-items: stretch; }
-.vision-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.vision-card { position: relative; border: 1px solid #b65a2b; border-radius: 12px; padding: 22px 18px; background: #101010; min-height: 220px; }
-.vision-card > svg { color: #ff762c; font-size: 42px; float: left; margin-right: 12px; }
-.vision-card h5 { font-size: 22px; font-weight: 800; margin: 8px 0 20px; }
-.vision-card p { clear: both; color: #eee; line-height: 1.5; }
-.vision-card strong { color: #ff762c; display: block; margin-top: 16px; }
-.reasons-area h5 { text-align: center; font-size: 23px; font-weight: 800; margin-bottom: 12px; }
-.reasons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
-.reason-card { text-align: center; background: #111; border: 1px solid #34251e; border-radius: 9px; overflow: hidden; }
-.reason-card > div { color: #ff762c; padding: 10px 0 2px; }
-.reason-card svg { font-size: 32px; }
-.reason-card strong { display: block; min-height: 50px; padding: 5px; background: #181818; font-size: 14px; }
-.reason-card p { padding: 8px; margin: 0; font-size: 12px; line-height: 1.4; color: #ddd; }
-@media (max-width: 900px) {
-  .story-layout, .about-bottom { grid-template-columns: 1fr; gap: 22px; }
+.about-page {
+  padding-top: 28px;
 }
+
+.story-layout {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 55px;
+  align-items: center;
+  margin: 34px 0 24px;
+}
+
+.story-copy h3 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #252525;
+}
+
+.title-line {
+  width: 170px;
+  height: 3px;
+  background: #ff6500;
+  margin: 8px 0 14px;
+}
+
+.story-copy p {
+  font-size: 17px;
+  line-height: 1.55;
+  color: #555555;
+}
+
+.about-photo {
+  height: 250px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1.12fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.vision-card {
+  position: relative;
+  border: 1px solid #ff6500;
+  border-radius: 12px;
+  padding: 22px 18px;
+  background: #ffffff;
+  min-height: 220px;
+  transform: translatey(-10px);
+}
+
+.vision-card > svg {
+  color: #ff6500;
+  font-size: 42px;
+  float: left;
+  margin-right: 12px;
+}
+
+.vision-card h5 {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 8px 0 20px;
+  color: #252525;
+}
+
+.vision-card p {
+  clear: both;
+  color: #555555;
+  line-height: 1.5;
+}
+
+.vision-card strong {
+  color: #ff6500;
+  display: block;
+  margin-top: 16px;
+}
+
+.reasons-area h5 {
+  text-align: center;
+  font-size: 23px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  color: #252525;
+}
+
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.reason-card {
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #ff6500;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.reason-card > div {
+  color: #ff6500;
+  padding: 10px 0 2px;
+}
+
+.reason-card svg {
+  font-size: 32px;
+}
+
+.reason-card strong {
+  display: block;
+  min-height: 50px;
+  padding: 5px;
+  background: #fff0e6;
+  color: #252525;
+  font-size: 14px;
+}
+
+.reason-card p {
+  padding: 8px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #555555;
+}
+
+@media (max-width: 900px) {
+  .story-layout,
+  .about-bottom {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+}
+
 @media (max-width: 560px) {
-  .vision-grid { grid-template-columns: 1fr; }
-  .reasons-grid { grid-template-columns: repeat(2, 1fr); }
-  .story-copy h3 { font-size: 30px; }
+  .vision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .story-copy h3 {
+    font-size: 30px;
+  }
 }

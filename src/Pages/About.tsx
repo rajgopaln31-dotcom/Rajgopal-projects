@@ -6,6 +6,7 @@ import DevicesOutlinedIcon from "@mui/icons-material/DevicesOutlined";
 import ScheduleOutlinedIcon from "@mui/icons-material/ScheduleOutlined";
 import SavingsOutlinedIcon from "@mui/icons-material/SavingsOutlined";
 import "./About.css";
+import "./NotFound.css";
 
 const reasons = [
   { icon: <GroupsOutlinedIcon />, title: "Expert Team", text: "Skilled designers and developers dedicated to your success." },

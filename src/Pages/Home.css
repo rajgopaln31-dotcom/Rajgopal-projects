@@ -1,25 +1,48 @@
-.home-page { padding-top: 42px; }
+.home-page {
+  padding-top: 42px;
+}
+
 .home-hero {
   display: grid;
   grid-template-columns: 1fr 1.05fr;
   gap: 46px;
   align-items: center;
 }
+
 .hero-copy h1 {
   font-size: clamp(34px, 4vw, 54px);
   line-height: 1.12;
   font-weight: 800;
   margin: 0 0 10px;
+  color: #020665;
 }
+
 .hero-highlight {
-  color: #ff762c;
+  color: #ff6500;
   font-size: clamp(19px, 2vw, 27px) !important;
   font-weight: 800 !important;
   margin-bottom: 42px !important;
 }
-.hero-button.MuiButton-root { min-width: 190px; }
-.hero-photo { height: 320px; overflow: hidden; border-radius: 12px; }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.hero-button.MuiButton-root {
+  min-width: 190px;
+  background: #ff6500;
+  color: #ffffff;
+}
+
+.hero-photo {
+  height: 320px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 .home-lower {
   margin-top: 32px;
   display: grid;
@@ -27,36 +50,258 @@
   gap: 48px;
   align-items: center;
 }
-.promise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+
+.promise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
 .promise-card {
   min-height: 205px;
-  background: #111;
-  border: 1px solid #171717;
+  background: #ffffff;
+  border: 1px solid #eeeeee;
   border-radius: 12px;
   padding: 24px;
 }
-.orange-icon { color: #ff762c; margin-bottom: 12px; }
-.orange-icon svg { font-size: 38px; }
-.promise-card h5 { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
-.promise-card p { color: #ddd; line-height: 1.55; }
-.trust-title { font-size: 25px !important; font-weight: 800 !important; margin-bottom: 18px !important; }
-.trust-panel { border: 1px solid #87401e; border-radius: 12px; overflow: hidden; background: #101010; }
-.trust-items { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 22px 16px; }
-.trust-items > div { display: grid; grid-template-columns: auto 1fr; gap: 9px; align-items: center; }
-.trust-items svg { color: #ff6500; font-size: 34px; }
-.trust-items strong { font-size: 16px; }
-.trust-items p { grid-column: 1 / -1; margin: 0; color: #ddd; line-height: 1.5; font-size: 14px; }
-.number-icon { background: #ff6500; border-radius: 50%; width: 38px; height: 38px; display: grid; place-items: center; font-weight: 800; }
-.trust-cta { text-align: center; padding: 14px 18px 20px; background: #090909; }
-.trust-cta h6 { font-weight: 800; font-size: 20px; }
-.trust-cta p { color: #ddd; margin: 8px 0 14px; }
-@media (max-width: 900px) {
-  .home-hero, .home-lower { grid-template-columns: 1fr; gap: 28px; }
-  .hero-photo { height: 300px; }
+
+.orange-icon {
+  color: #ff6500;
+  margin-bottom: 12px;
 }
+
+.orange-icon svg {
+  font-size: 38px;
+}
+
+.promise-card h5 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  color: #252525;
+}
+
+.promise-card p {
+  color: #555555;
+  line-height: 1.55;
+}
+
+.trust-title {
+  font-size: 25px !important;
+  font-weight: 800 !important;
+  margin-bottom: 18px !important;
+  color: #252525;
+}
+
+.trust-panel {
+  border: 1px solid #ff6500;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #ffffff;
+  transform: translatey(-10px);
+}
+
+.trust-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 22px 16px;
+}
+
+.trust-items > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 9px;
+  align-items: center;
+}
+
+.trust-items svg {
+  color: #ff6500;
+  font-size: 34px;
+}
+
+.trust-items strong {
+  font-size: 16px;
+  color: #252525;
+}
+
+.trust-items p {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: #555555;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+.number-icon {
+  background: #ff6500;
+  color: #ffffff;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+}
+
+.trust-cta {
+  text-align: center;
+  padding: 14px 18px 20px;
+  background: #fff0e6;
+}
+
+.trust-cta h6 {
+  font-weight: 800;
+  font-size: 20px;
+  color: #252525;
+}
+
+.trust-cta p {
+  color: #555555;
+  margin: 8px 0 14px;
+}
+
+@media (max-width: 900px) {
+  .home-hero,
+  .home-lower {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-photo {
+    height: 300px;
+  }
+}
+
 @media (max-width: 560px) {
-  .home-page { padding-top: 28px; }
-  .promise-grid { grid-template-columns: 1fr; }
-  .trust-items { grid-template-columns: 1fr; }
-  .hero-photo { height: 220px; }
+  .home-page {
+    padding-top: 28px;
+  }
+
+  .promise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-items {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-photo {
+    height: 220px;
+  }
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-actions .hero-button {
+  min-width: 145px;
+  background-color: #1976d2;
+  color: #ffffff;
+  border-radius: 8px;
+}
+
+.hero-actions .hero-button:hover {
+  background-color: #0d47a1;
+}
+
+@media (max-width: 600px) {
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .hero-actions .hero-button {
+    min-width: 0;
+    flex: 1 1 100%;
+  }
+}
+/* Home Lower Layout */
+
+.home-lower {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+}
+
+.promise-grid {
+  width: 100%;
+}
+
+/* About MegaViz Technologies */
+
+.home-about {
+  width: 100%;
+  min-height: 150px;
+  padding: 20px 28px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.home-about-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.home-about-icon {
+  color: #ff6500;
+  font-size: 42px !important;
+}
+
+.home-about-heading h4 {
+  font-size: 23px;
+  font-weight: 700;
+  color: #252525;
+}
+
+.home-about-tagline {
+  color: #ff6500;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+.home-about-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555555;
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .home-about {
+    padding: 18px 22px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .home-about {
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .home-about-icon {
+    font-size: 34px !important;
+  }
+
+  .home-about-heading h4 {
+    font-size: 19px;
+  }
+
+  .home-about-text {
+    font-size: 13px;
+  }
 }

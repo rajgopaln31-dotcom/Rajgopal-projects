@@ -7,14 +7,25 @@ import "./index.css";
 
 const theme = createTheme({
   palette: {
-    mode: "dark",
-    primary: { main: "#ff6500" },
-    background: { default: "#050505", paper: "#111111" },
-    text: { primary: "#ffffff", secondary: "#d0d0d0" },
+    mode: "light",
+    primary: {
+      main: "#ff6500",
+    },
+    background: {
+      default: "#fff8f3",
+      paper: "#ffffff",
+    },
+    text: {
+      primary: "#252525",
+      secondary: "#555555",
+    },
   },
   typography: {
     fontFamily: "Arial, Helvetica, sans-serif",
-    button: { textTransform: "none", fontWeight: 700 },
+    button: {
+      textTransform: "none",
+      fontWeight: 700,
+    },
   },
 });
 
