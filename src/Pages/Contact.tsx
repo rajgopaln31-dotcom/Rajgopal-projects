@@ -1,247 +1,107 @@
-import { useState } from "react";
-import {
-  Box,
-  Button,
-  Container,
-  TextField,
-  Typography
-} from "@mui/material";
-
+import { useState, type FormEvent } from "react";
+import { Box, Button, Container, TextField, Typography } from "@mui/material";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+// @ts-ignore CSS imports are handled by the bundler, not TypeScript.
+import "./Contact.css";
 
-import type { FormEvent } from "react";
-
-import { PageLayout } from "../Components/Layout";
-import "../styles/Contact.css";
-import map from "../assets/map.jpg";
-import Amma from "../images/Amma.jpg";
-
-const contactInfo = [
-  {
-    icon: <EmailOutlinedIcon />,
-    title: "Email",
-    value: "info@megaviztech.com",
-    link: "mailto:info@megaviztech.com"
-  },
-  {
-    icon: <PhoneOutlinedIcon />,
-    title: "Phone",
-    value: "9154183243",
-    link: "tel:9154183243"
-  },
-  {
-    icon: <LocationOnOutlinedIcon />,
-    title: "Location",
-    value: "Hyderabad, Madhapur",
-    link: "https://maps.app.goo.gl/JFomnr8u5xXP2M786?g_st=aw"
-  }
-];
+type FormValues = { name: string; email: string; message: string };
+type FormErrors = Partial<FormValues>;
 
 export default function Contact() {
+  const [values, setValues] = useState<FormValues>({ name: "", email: "", message: "" });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [submitted, setSubmitted] = useState(false);
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const validate = () => {
+    const next: FormErrors = {};
+    if (!values.name.trim()) next.name = "Please enter your name";
+    if (!values.email.trim()) next.email = "Please enter your email";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email)) next.email = "Enter a valid email";
+    if (!values.message.trim()) next.message = "Please enter your message";
+    setErrors(next);
+    return Object.keys(next).length === 0;
+  };
 
-  // Name validation
-  const isNameValid = name.trim().length >= 3;
-
-  // Email validation
-  const isEmailValid =
-    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-  // Message validation
-  const isMessageValid = message.trim().length >= 5;
-
-  // Check all validations
-  const isFormValid =
-    isNameValid && isEmailValid && isMessageValid;
-
-  // Submit function
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-
     event.preventDefault();
+    setSubmitted(false);
+    if (!validate()) return;
+    console.log("Contact form submitted:", values);
+    setSubmitted(true);
+    setValues({ name: "", email: "", message: "" });
+  };
 
-    console.log("Form Submitted Successfully!");
-    console.log("Name:", name);
-    console.log("Email:", email);
-    console.log("Message:", message);
-
-    alert("Message submitted successfully!");
-
-    setName("");
-    setEmail("");
-    setMessage("");
+  const updateField = (field: keyof FormValues, value: string) => {
+    setValues((current) => ({ ...current, [field]: value }));
+    setErrors((current) => ({ ...current, [field]: "" }));
+    setSubmitted(false);
   };
 
   return (
-    <PageLayout>
+    <Container maxWidth="lg" className="contact-page page-container">
+      <Typography className="page-title">Contact Us</Typography>
+      <Typography className="page-subtitle">Let's Build Something Great Together.</Typography>
 
-      <Container className="page contact-page">
-
-        {/* Heading */}
-
-        <Typography className="page-title">
-          Contact Us
-        </Typography>
-
-        <Typography className="page-subtitle">
-          Let's Build Something Great Together.
-        </Typography>
-
-        <hr className="teal-line" />
-
-        {/* Team Image */}
-
-        <img
-          className="wide-image"
-          src={Amma}
-          alt="Our team"
-          style={{ transform: "translateY(-15px)" }}
-        />
-
-        {/* Contact Information */}
-
-        <Box className="contact-info">
-
-          {contactInfo.map((item) => (
-            <Box className="contact-row" key={item.title}>
-
-              <Box className="teal-icon">
-                {item.icon}
-              </Box>
-
-              <Box>
-
-                <Typography className="card-title">
-                  {item.title}
-                </Typography>
-
-                <Typography
-                  component="a"
-                  href={item.link}
-                  className="contact-link"
-                  target={
-                    item.title === "Location"
-                      ? "_blank"
-                      : undefined
-                  }
-                  rel={
-                    item.title === "Location"
-                      ? "noopener noreferrer"
-                      : undefined
-                  }
-                >
-                  {item.value}
-                </Typography>
-
-              </Box>
-
-            </Box>
-          ))}
-
+      <Box className="contact-info-grid">
+        <Box className="contact-info-card">
+          <span className="contact-info-icon"><EmailOutlinedIcon /></span>
+          <Typography variant="h5">Email</Typography>
+          <a href="mailto:hello@megaviztech.com">hello@megaviztech.com</a>
         </Box>
-
-        {/* Contact Form */}
-
-        <Typography className="section-heading">
-          Send Us a Message
-        </Typography>
-
-        <Box
-          component="form"
-          onSubmit={handleSubmit}
-          className="contact-form"
-        >
-
-          {/* Name Field */}
-
-          <TextField
-            name="name"
-            label="Name"
-            placeholder="Your Name"
-            fullWidth
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            error={name.length > 0 && !isNameValid}
-            helperText={
-              name.length > 0 && !isNameValid
-                ? "Name must contain at least 3 characters"
-                : ""
-            }
-          />
-
-          {/* Email Field */}
-
-          <TextField
-            name="email"
-            label="Email"
-            placeholder="Your Email"
-            fullWidth
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            error={email.length > 0 && !isEmailValid}
-            helperText={
-              email.length > 0 && !isEmailValid
-                ? "Enter a valid email address"
-                : ""
-            }
-          />
-
-          {/* Message Field */}
-
-          <TextField
-            name="message"
-            label="Message"
-            placeholder="Your Message..."
-            multiline
-            rows={3}
-            fullWidth
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            error={message.length > 0 && !isMessageValid}
-            helperText={
-              message.length > 0 && !isMessageValid
-                ? "Message must contain at least 5 characters"
-                : ""
-            }
-          />
-
-          {/* Submit Button */}
-
-          <Button
-            type="submit"
-            variant="contained"
-            className="send-btn"
-            disabled={!isFormValid}
-          >
-            Send Message
-          </Button>
-
+        <Box className="contact-info-card">
+          <span className="contact-info-icon"><PhoneOutlinedIcon /></span>
+          <Typography variant="h5">Phone</Typography>
+          <a href="tel:+15552347890"> 9154183243</a>
         </Box>
+        <Box className="contact-info-card">
+          <span className="contact-info-icon"><LocationOnOutlinedIcon /></span>
+          <Typography variant="h5">Location</Typography>
+          <a href="https://www.google.com/maps/dir//MegaViz+Technologies,+building,+SBC+working+Space+5th+Floor,+Mahindra+Pride+School,+Rd+Number+1,+KPHB+Phase+2,+Kukatpally,+Hyderabad,+Telangana+500072/@16.006439,80.510502,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3bcb914aa2464b6d:0x6fbbd39ac992bd67!2m2!1d78.3996632!2d17.4874522?entry=ttu&g_ep=EgoyMDI2MTEwMi4wIKXMDSoASAFQAw%3D%3D">
+            Hyderabad, Telangana, India
+          </a>
+        </Box>
+      </Box>
 
-        {/* Our Location */}
+      <Box className="contact-content">
+        <Box className="contact-form-area">
+          <Typography variant="h3">Send Us a Message</Typography>
+          <Box component="form" onSubmit={handleSubmit} noValidate>
+            <label htmlFor="contact-name">Name</label>
+            <TextField id="contact-name" fullWidth placeholder="Your Name" value={values.name}
+              onChange={(e) => updateField("name", e.target.value)} error={Boolean(errors.name)}
+              helperText={errors.name} />
+            <label htmlFor="contact-email">Email</label>
+            <TextField id="contact-email" fullWidth placeholder="Your Email" value={values.email}
+              onChange={(e) => updateField("email", e.target.value)} error={Boolean(errors.email)}
+              helperText={errors.email} />
+            <label htmlFor="contact-message">Message</label>
+            <TextField id="contact-message" fullWidth multiline minRows={2} placeholder="Your Message..."
+              value={values.message} onChange={(e) => updateField("message", e.target.value)}
+              error={Boolean(errors.message)} helperText={errors.message} />
+            <Button type="submit" fullWidth className="orange-button send-button">Send Message</Button>
+            {submitted && <Typography className="success-message">Your message was submitted successfully!</Typography>}
+          </Box>
+        </Box>
+       <Box className="location-area">
+  <Typography variant="h3">Our Location</Typography>
 
-        <Typography className="section-heading">
-          Our Location
-        </Typography>
-
-        <a
-          href="https://maps.app.goo.gl/JFomnr8u5xXP2M786?g_st=aw"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src={map}
-            alt="Map showing our location"
-            className="wide-image map-image"
-          />
-        </a>
-
-      </Container>
-
-    </PageLayout>
+  <Box
+    component="a"
+    href="https://www.google.com/maps/dir//MegaViz+Technologies,+building,+SBC+working+Space+5th+Floor,+Mahindra+Pride+School,+Rd+Number+1,+KPHB+Phase+2,+Kukatpally,+Hyderabad,+Telangana+500072"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="map-placeholder"
+  >
+    <div className="map-roads" />
+    <LocationOnOutlinedIcon />
+    <span style={{ transform: "translateY(-120%)" }}>MegaViz Technologies, Hyderabad</span>
+    <span>Click to View Location</span>
+  </Box>
+</Box>
+        </Box>
+    
+    </Container>
   );
 }

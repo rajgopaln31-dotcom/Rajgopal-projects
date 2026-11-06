@@ -1,0 +1,28 @@
+.site-main {
+  min-height: 55vh;
+}
+.page-container {
+  width: min(1320px, 90%);
+  margin: 0 auto;
+}
+.page-title {
+  text-align: center;
+  font-size: clamp(34px, 4vw, 54px) !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+}
+.page-subtitle {
+  color: #ff762c;
+  text-align: center;
+  font-size: clamp(18px, 2vw, 26px) !important;
+  font-weight: 700 !important;
+  margin-top: 8px !important;
+}
+.orange-button.MuiButton-root {
+  background: #ff6500;
+  color: white;
+  border-radius: 9px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 800;
+}

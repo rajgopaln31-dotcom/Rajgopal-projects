@@ -1,12 +1,5 @@
+import AppRoutes from "./Routes/AppRoutes";
 
-import MegavizRoutes from "./Routes/MegavizRoutes";
- function App() {
-   return (
-   <>
-<MegavizRoutes/>
-
-         </>
-             );
-             
-            }
- export default App;
+export default function App() {
+  return <AppRoutes />;
+}

@@ -1,121 +1,50 @@
- import {
-  Avatar,
-  Box,
-  Container,
-  Paper,
-  Rating,
-  Typography
-} from "@mui/material";
-
-import "../Styles/Reviews.css";
-//import { PageLayout } from "../Components/Layout";
+import { Box, Button, Container, Typography } from "@mui/material";
+//import StarIcon from "@mui/icons-material/Star";
+import GoogleIcon from "@mui/icons-material/Google";
+import "./Reviews.css";
 
 const reviews = [
-  {
-    name: "Satish Javvadi",
-    initial: "S",
-    text: "The team delivered our website exactly as we envisioned. Professional, responsive, and the web development was flawless. Highly recommend MegaViz for any software project."
-  },
-  {
-    name: "Siva ganesh",
-    initial: "S",
-    text: "Excellent service and support throughout. They built our software solution with great attention to detail and delivered on time. Truly dependable partner."
-  },
-  {
-    name: "Siva Naga",
-    initial: "S",
-    text: "Impressed with their expertise in web development. Clean code, modern design, and seamless functionality. MegaViz exceeded our expectations."
-  },
-  {
-    name: "Muthireddy Ramakrishna",
-    initial: "M",
-    text: "Outstanding experience working with MegaViz. They understood our requirements and created a robust platform that runs smoothly. Great communication too."
-  },
-  {
-    name: "Ganga Vijay",
-    initial: "G",
-    text: "Professional and innovative. The software solution they built has streamlined our operations significantly. Highly professional and reliable team."
-  },
-  {
-    name: "Chaitanya",
-    initial: "C",
-    text: "Fantastic work on our website and backend system. Responsive, modern, and scalable. MegaViz is our go-to for all tech solutions now."
-  }
+  { initials: "SJ", name: "Satish Jawadi", text: "Excellent platform! The AI automation has saved us countless hours. Highly reliable and intuitive." },
+  { initials: "SG", name: "Siva Ganesh", text: "Outstanding support and seamless integration. MegaViz truly transformed our workflows." },
+  { initials: "SN", name: "Siva Naga", text: "User-friendly and powerful. The visualizing tools are top notch and easy to use." },
+  { initials: "MR", name: "Muthireddy Ramakrishna", text: "Great experience with the team. Fast, efficient, and the results are impressive." },
+  { initials: "GV", name: "Ganga Vijay", text: "We saw immediate impact on our operations. Clean dashboard and accurate insights." },
+  { initials: "ST", name: "Suresh Thiru", text: "Reliable solution with fantastic AI features. Customer support is responsive and helpful." },
+  { initials: "C", name: "Chaitanya", text: "Love the automation capabilities. It streamlined our processes perfectly." },
+  { initials: "NM", name: "Navya Mamatha", text: "Highly recommend MegaViz! Professional, innovative, and future-ready." },
 ];
 
 export default function Reviews() {
   return (
-  //  <PageLayout>
-      <Box className="review-page">
-        <Container maxWidth="xl" className="review-container">
-
-          <Typography className="review-heading">
-            What Our Clients Say
-          </Typography>
-
-          <Box className="review-rating">
-            <Typography className="rating-number">
-              5.0
-            </Typography>
-
-            <Box className="rating-details">
-              <Rating
-                value={5}
-                readOnly
-                precision={0.5}
-                className="main-rating"
-              />
-
-              <Box className="google-reviews">
-                <Typography className="google-icon">G</Typography>
-                <Typography className="google-text">
-                  Google Reviews
-                </Typography>
-                <Typography className="review-count">
-                  1,240+ Reviews
-                </Typography>
+    <Container maxWidth="xl" className="reviews-page">
+      <Box className="reviews-brand">
+        <div className="review-logo">MEGA<span>V</span>IZ</div>
+        <Typography className="page-title">What Our Clients Say</Typography>
+        <Box className="rating-line">
+          <strong>5.0</strong>
+          <span className="big-stars">★★★★★★</span>
+          <GoogleIcon />
+          <b>Google Reviews</b>
+        </Box>
+      </Box>
+      <Box className="reviews-grid">
+        {reviews.map((review) => (
+          <Box className="review-card" key={review.name}>
+            <Box className="review-person">
+              <span className="avatar">{review.initials}</span>
+              <Box>
+                <Typography variant="h6">{review.name}</Typography>
+                <div className="stars">★★★★★</div>
               </Box>
             </Box>
+            <Typography>{review.text}</Typography>
           </Box>
-
-          <Typography className="review-subtitle">
-            Trusted by businesses for exceptional web development & software solutions
-          </Typography>
-
-          <Box className="review-grid">
-            {reviews.map((review) => (
-              <Paper
-                elevation={0}
-                className="review-card"
-                key={review.name}
-              >
-                <Box className="review-user">
-                  <Avatar className="review-avatar">
-                    {review.initial}
-                  </Avatar>
-
-                  <Box className="review-user-details">
-                    <Typography className="review-name">
-                      {review.name}
-                    </Typography>
-
-                    <Rating
-                      value={5}
-                      readOnly
-                      className="card-rating"
-                    />
-                  </Box>
-                </Box>
-
-                <Typography className="review-text">
-                  {review.text}
-                </Typography>
-              </Paper>
-            ))}
-          </Box>
-
-        </Container>
+        ))}
       </Box>
- //   </PageLayout>
+      <Box className="review-actions">
+        <Button className="orange-button" onClick={() => window.alert("More reviews can be added to the reviews list in Reviews.tsx.")}>Load More Reviews</Button>
+        <Button className="orange-button" onClick={() => window.open("https://www.google.com/search?q=MegaVizTech+reviews", "_blank", "noopener,noreferrer")}>Write a Review</Button>
+      </Box>
+    </Container>
   );
 }

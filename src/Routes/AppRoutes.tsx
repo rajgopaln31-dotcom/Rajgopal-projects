@@ -1,19 +1,28 @@
-
-import { Routes, Route, } from "react-router-dom";
-
+import { Navigate, Route, Routes } from "react-router-dom";
+import Header from "../Components/Header";
+import Footer from "../Components/Footer";
 import Home from "../Pages/Home";
-import Projects from "../Pages/Projects";
+import About from "../Pages/About";
+import Services from "../Pages/Services";
+import Reviews from "../Pages/Reviews";
 import Contact from "../Pages/Contact";
+import "../components/Layout.css";
 
 export default function AppRoutes() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/home" element={<Home />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/contact" element={<Contact />} />
-
-    
-    </Routes>
+    <>
+      <Header />
+      <main className="site-main">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/reviews" element={<Reviews />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
+      <Footer />
+    </>
   );
 }

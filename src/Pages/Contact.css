@@ -1,0 +1,32 @@
+.contact-page { padding-top: 28px; }
+.contact-info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 42px; margin: 55px 0 32px; }
+.contact-info-card { position: relative; min-height: 150px; border: 2px solid #b65a2b; border-radius: 17px; background: #111; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 34px 15px 18px; text-align: center; }
+.contact-info-icon { position: absolute; top: -34px; width: 76px; height: 76px; display: grid; place-items: center; border-radius: 17px; background: #ff6500; color: #080808; }
+.contact-info-icon svg { font-size: 42px; }
+.contact-info-card h5 { font-weight: 800; font-size: 25px; margin-bottom: 5px; }
+.contact-info-card a, .contact-info-card > span:last-child { font-size: 19px; font-weight: 700; }
+.contact-info-card a:hover { color: #ff762c; }
+.contact-content { display: grid; grid-template-columns: 1.05fr .95fr; gap: 55px; }
+.contact-form-area h3, .location-area h3 { font-size: clamp(28px, 3vw, 40px); font-weight: 800; margin-bottom: 12px; }
+.contact-form-area form { display: flex; flex-direction: column; gap: 5px; }
+.contact-form-area label { font-size: 15px; font-weight: 700; margin-top: 3px; }
+.contact-form-area .MuiOutlinedInput-root { color: #fff; background: #111; border-radius: 10px; }
+.contact-form-area .MuiOutlinedInput-notchedOutline { border: 2px solid #b65a2b; }
+.contact-form-area .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline { border-color: #ff762c; }
+.contact-form-area .MuiInputBase-input { padding: 11px 13px; }
+.contact-form-area .MuiInputBase-input::placeholder { color: #aaa; opacity: 1; }
+.contact-form-area .MuiFormHelperText-root { margin-left: 2px; }
+.send-button.MuiButton-root { margin-top: 12px; padding: 13px; font-size: 18px; }
+.success-message.MuiTypography-root { color: #79d98a; margin-top: 8px; }
+.map-placeholder { height: 255px; position: relative; overflow: hidden; border: 2px solid #b65a2b; border-radius: 15px; background-color: #171c22; background-image: linear-gradient(30deg, transparent 47%, #303943 48%, #303943 51%, transparent 52%), linear-gradient(115deg, transparent 45%, #303943 46%, #303943 49%, transparent 50%), linear-gradient(0deg, transparent 48%, #252d36 49%, #252d36 52%, transparent 53%); background-size: 110px 90px, 140px 110px, 85px 75px; display: grid; place-items: center; }
+.map-placeholder > svg { color: #ff6500; font-size: 62px; filter: drop-shadow(0 2px 4px #000); z-index: 2; }
+.map-placeholder > span { position: absolute; bottom: 12px; color: #fff; font-weight: 700; text-shadow: 0 2px 4px #000; z-index: 2; }
+.map-roads { position: absolute; inset: 0; background: linear-gradient(120deg, transparent 48%, #ff6500 49%, #ff6500 50%, transparent 51%), linear-gradient(15deg, transparent 58%, #ff6500 59%, #ff6500 60%, transparent 61%); opacity: .7; }
+@media (max-width: 850px) {
+  .contact-info-grid { gap: 22px; }
+  .contact-content { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 600px) {
+  .contact-info-grid { grid-template-columns: 1fr; gap: 48px; margin-top: 48px; }
+  .contact-info-card { min-height: 125px; }
+}
